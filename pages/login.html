@@ -5,6 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Top Picks</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Additional inline styles for enhanced design */
+    .login-hero {
+      height: 220px;
+      background: linear-gradient(135deg, #6c63ff, #3a3897);
+      border-radius: 0 0 30px 30px;
+      padding: 20px;
+    }
+    
+    .login-hero-content {
+      margin-top: 20px;
+    }
+    
+    .login-logo {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .login-content {
+      margin-top: -30px;
+      border-radius: 30px 30px 0 0;
+      padding: 30px 24px;
+    }
+    
+    .auth-tabs {
+      display: flex;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #f0f2f5;
+    }
+    
+    .auth-tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #777;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .auth-tab.active {
+      color: #6c63ff;
+    }
+    
+    .auth-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #6c63ff;
+      border-radius: 3px 3px 0 0;
+    }
+    
+    .login-subtitle {
+      margin-bottom: 30px;
+    }
+    
+    .input-container {
+      border-radius: 16px;
+      padding: 0 20px;
+      margin-bottom: 20px;
+      height: 56px;
+    }
+    
+    .input-container svg {
+      color: #888;
+    }
+    
+    .input-container input {
+      font-size: 1.05rem;
+    }
+    
+    .login-btn {
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      background: linear-gradient(135deg, #6c63ff, #3a3897);
+    }
+    
+    .social-login {
+      text-align: center;
+      margin: 24px 0;
+    }
+    
+    .social-login p {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .social-login p::before, 
+    .social-login p::after {
+      content: '';
+      height: 1px;
+      background-color: #e0e0e0;
+      flex: 1;
+    }
+    
+    .social-login p::before {
+      margin-right: 16px;
+    }
+    
+    .social-login p::after {
+      margin-left: 16px;
+    }
+    
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+    }
+    
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: #fff;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex: 1;
+      max-width: 180px;
+      height: 56px;
+    }
+    
+    .social-btn.google {
+      color: #333;
+    }
+    
+    .social-btn.facebook {
+      color: #333;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .social-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .social-btn.google svg {
+      margin-right: 8px;
+    }
+    
+    .social-btn.facebook svg {
+      margin-right: 8px;
+    }
+    
+    .social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .form-content {
+      display: block;
+    }
+    
+    .signup-content {
+      display: none;
+    }
+  </style>
 </head>
 <body class="login-page">
   <div class="app-container">
@@ -29,94 +207,197 @@
 
     <!-- Login Content -->
     <div class="login-content">
-      <h2>Welcome Back!</h2>
-      <p class="login-subtitle">Sign in to continue your journey</p>
+      <!-- Auth Tabs -->
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="login-tab">Sign In</div>
+        <div class="auth-tab" id="signup-tab">Sign Up</div>
+      </div>
       
-      <form class="login-form">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <div class="input-container">
-            <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <path d="M22 6l-10 7L2 6"/>
-            </svg>
-            <input type="email" id="email" placeholder="Your email" required>
-          </div>
-        </div>
+      <!-- Login Form -->
+      <div class="form-content" id="login-form">
+        <p class="login-subtitle">Sign in to continue your journey</p>
         
-        <div class="form-group">
-          <label for="password">Password</label>
-          <div class="input-container">
-            <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-            <input type="password" id="password" placeholder="Your password" required>
-            <button type="button" class="toggle-password">
-              <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                <circle cx="12" cy="12" r="3"/>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-container">
+              <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="M22 6l-10 7L2 6"/>
               </svg>
+              <input type="email" id="email" placeholder="Your email" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-container">
+              <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input type="password" id="password" placeholder="Your password" required>
+              <button type="button" class="toggle-password">
+                <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          
+          <button type="submit" class="login-btn" onclick="window.location.href='home.html'; return false;">Sign In</button>
+        </form>
+        
+        <div class="social-login">
+          <p>Or sign in with</p>
+          <div class="social-buttons">
+            <button class="social-btn google">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              Google
+            </button>
+            <button class="social-btn facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12C2 16.991 5.657 21.128 10.438 21.879V14.89H7.898V12H10.438V9.797C10.438 7.291 11.93 5.907 14.215 5.907C15.309 5.907 16.453 6.102 16.453 6.102V8.562H15.193C13.95 8.562 13.563 9.333 13.563 10.124V12H16.336L15.893 14.89H13.563V21.879C18.343 21.129 22 16.99 22 12C22 6.477 17.523 2 12 2Z" fill="#1877F2"/>
+              </svg>
+              Facebook
             </button>
           </div>
         </div>
-        
-        <div class="form-options">
-          <label class="remember-me">
-            <input type="checkbox">
-            <span>Remember me</span>
-          </label>
-          <a href="#" class="forgot-password">Forgot Password?</a>
-        </div>
-        
-        <button type="submit" class="login-btn" onclick="window.location.href='home.html'; return false;">Sign In</button>
-      </form>
-      
-      <div class="social-login">
-        <p>Or sign in with</p>
-        <div class="social-buttons">
-          <button class="social-btn google">
-            <svg width="20" height="20" viewBox="0 0 24 24">
-              <path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 1 1 0-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0 0 12.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/>
-            </svg>
-            Google
-          </button>
-          <button class="social-btn facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
-            </svg>
-            Facebook
-          </button>
-        </div>
       </div>
       
-      <div class="signup-link">
-        <p>Don't have an account? <a href="#">Sign Up</a></p>
+      <!-- Signup Form -->
+      <div class="form-content signup-content" id="signup-form">
+        <p class="login-subtitle">Create an account to start exploring</p>
+        
+        <form class="login-form">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <div class="input-container">
+              <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input type="text" id="signup-name" placeholder="Your full name" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <div class="input-container">
+              <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="M22 6l-10 7L2 6"/>
+              </svg>
+              <input type="email" id="signup-email" placeholder="Your email" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="input-container">
+              <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input type="password" id="signup-password" placeholder="Create password" required>
+              <button type="button" class="toggle-password" data-for="signup-password">
+                <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" required>
+              <span>I agree to the <a href="#" style="color: #6c63ff;">Terms & Conditions</a></span>
+            </label>
+          </div>
+          
+          <button type="submit" class="login-btn" onclick="window.location.href='home.html'; return false;">Create Account</button>
+        </form>
+        
+        <div class="social-login">
+          <p>Or sign up with</p>
+          <div class="social-buttons">
+            <button class="social-btn google">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              Google
+            </button>
+            <button class="social-btn facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12C2 16.991 5.657 21.128 10.438 21.879V14.89H7.898V12H10.438V9.797C10.438 7.291 11.93 5.907 14.215 5.907C15.309 5.907 16.453 6.102 16.453 6.102V8.562H15.193C13.95 8.562 13.563 9.333 13.563 10.124V12H16.336L15.893 14.89H13.563V21.879C18.343 21.129 22 16.99 22 12C22 6.477 17.523 2 12 2Z" fill="#1877F2"/>
+              </svg>
+              Facebook
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-    document.querySelector('.toggle-password').addEventListener('click', function() {
-      const passwordInput = document.getElementById('password');
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        this.innerHTML = `
-          <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M3 3l18 18"/>
-          </svg>
-        `;
-      } else {
-        passwordInput.type = 'password';
-        this.innerHTML = `
-          <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
-          </svg>
-        `;
-      }
+    // Tab switching functionality
+    document.getElementById('login-tab').addEventListener('click', function() {
+      document.getElementById('login-tab').classList.add('active');
+      document.getElementById('signup-tab').classList.remove('active');
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('signup-form').style.display = 'none';
+    });
+    
+    document.getElementById('signup-tab').addEventListener('click', function() {
+      document.getElementById('signup-tab').classList.add('active');
+      document.getElementById('login-tab').classList.remove('active');
+      document.getElementById('signup-form').style.display = 'block';
+      document.getElementById('login-form').style.display = 'none';
+    });
+    
+    // Password visibility toggle
+    document.querySelectorAll('.toggle-password').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const passwordId = this.getAttribute('data-for') || 'password';
+        const passwordInput = document.getElementById(passwordId);
+        
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          this.innerHTML = `
+            <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M3 3l18 18"/>
+            </svg>
+          `;
+        } else {
+          passwordInput.type = 'password';
+          this.innerHTML = `
+            <svg width="20" height="20" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          `;
+        }
+      });
     });
   </script>
 </body>
