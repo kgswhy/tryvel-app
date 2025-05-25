@@ -868,30 +868,31 @@ body.home-page {
 
 /* Home Page Styles */
 .home-page {
-  background-color: #aeb4b9;
+  background-color: #f8f9fa;
   min-height: 100vh;
   font-family: 'Inter', Arial, sans-serif;
   color: #23272f;
-  padding-bottom: 70px;
 }
 
 .app-container {
-  max-width: 480px;
+  max-width: 420px;
   margin: 0 auto;
+  min-height: 100vh;
   position: relative;
+  padding-bottom: 70px;
 }
 
 /* Status Bar */
 .status-bar {
   display: flex;
   justify-content: space-between;
-  padding: 6px 16px;
-  background-color: transparent;
+  align-items: center;
+  padding: 8px 16px;
 }
 
 .status-time {
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .status-icons {
@@ -899,266 +900,214 @@ body.home-page {
   gap: 6px;
 }
 
-.status-signal, .status-wifi, .status-battery {
+.status-signal,
+.status-wifi,
+.status-battery {
   width: 18px;
   height: 18px;
-  background-color: #23272f;
-  border-radius: 2px;
+  background-color: #222;
+  border-radius: 50%;
 }
 
 /* Header */
 .home-header {
-  padding: 16px;
-}
-
-.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16px;
   margin-bottom: 16px;
 }
 
-.app-title {
-  font-size: 24px;
+.header-title h1 {
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #23272f;
+  margin: 0;
+  margin-bottom: 4px;
 }
 
-.notification-btn {
-  background: none;
-  border: none;
-  padding: 8px;
-  color: #23272f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header-title h2 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
 }
 
+.header-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Search Container */
 .search-container {
-  margin-top: 8px;
-}
-
-.search-bar {
+  background-color: #fff;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border-radius: 24px;
   padding: 12px 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin: 0 16px 24px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .search-icon {
-  color: #9ca3af;
-  margin-right: 10px;
+  margin-right: 12px;
+  color: #888;
 }
 
 .search-input {
-  flex: 1;
   border: none;
   outline: none;
-  font-size: 16px;
-  color: #23272f;
+  width: 100%;
+  font-size: 1rem;
   background: transparent;
 }
 
-/* Categories Section */
-.categories-section {
-  padding: 16px;
-  margin-top: 8px;
-}
-
+/* Section Headers */
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
   margin-bottom: 16px;
 }
 
-.section-title {
-  font-size: 18px;
+.section-header h3 {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #23272f;
+  margin: 0;
 }
 
-.see-all-link {
+.view-all {
   color: #6c63ff;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 14px;
+  text-decoration: none;
 }
 
-.categories-list {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 4px 0;
-  scrollbar-width: none; /* Firefox */
+/* Categories Section */
+.categories-section {
+  margin-bottom: 24px;
 }
 
-.categories-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 0 16px;
 }
 
 .category-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70px;
+  gap: 8px;
 }
 
 .category-icon {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 16px;
-  background-color: #fff;
+  background-color: #eaf1f7;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  font-size: 24px;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.category-name {
-  font-size: 14px;
+.category-icon.beach {
+  background-color: #ffe9e0;
+}
+
+.category-icon.mountain {
+  background-color: #e0f2ff;
+}
+
+.category-icon.restaurant {
+  background-color: #ffe0ec;
+}
+
+.category-icon.park {
+  background-color: #e0ffe5;
+}
+
+.category-item span {
+  font-size: 0.85rem;
   font-weight: 500;
-  text-align: center;
 }
 
-/* Destinations Section */
-.destinations-section {
-  padding: 16px;
-  margin-top: 8px;
-}
-
-.destinations-list {
+/* Places Carousel */
+.places-carousel {
   display: flex;
   gap: 16px;
+  padding: 0 16px;
   overflow-x: auto;
-  padding: 4px 0;
   scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: 24px;
 }
 
-.destinations-list::-webkit-scrollbar {
+.places-carousel::-webkit-scrollbar {
   display: none;
 }
 
-.destination-card {
-  min-width: 240px;
+.place-card {
+  min-width: 200px;
   background-color: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-.destination-image {
+.place-image {
+  height: 140px;
   position: relative;
-  height: 160px;
 }
 
-.destination-image img {
+.place-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.destination-bookmark {
+.place-badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 8px;
+  right: 8px;
   background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: #23272f;
 }
 
-.destination-info {
-  padding: 16px;
+.place-info {
+  padding: 12px;
 }
 
-.destination-name {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.place-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
 }
 
-.destination-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.place-info p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
 }
 
-.destination-rating, .destination-location {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  color: #6b7280;
+/* Popular Section */
+.popular-section {
+  margin-bottom: 24px;
 }
 
-/* Nearby Section */
-.nearby-section {
-  padding: 16px;
-  margin-top: 8px;
-}
-
-.nearby-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.nearby-card {
-  display: flex;
-  background-color: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-.nearby-image {
-  width: 100px;
-  height: 100px;
-}
-
-.nearby-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.nearby-info {
-  flex: 1;
-  padding: 12px 16px;
-}
-
-.nearby-name {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.nearby-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.nearby-distance, .nearby-rating {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.nearby-address {
-  font-size: 14px;
-  color: #6b7280;
+/* Recommended Section */
+.recommended-section {
+  margin-bottom: 24px;
 }
 
 /* Bottom Navigation */
@@ -1167,58 +1116,36 @@ body.home-page {
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: #fff;
   display: flex;
   justify-content: space-around;
-  background-color: #fff;
   padding: 12px 0;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.06);
-  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .nav-btn {
   background: none;
   border: none;
+  padding: 8px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #9ca3af;
-  cursor: pointer;
-  padding: 6px 12px;
-  transition: color 0.2s;
+  gap: 4px;
 }
 
 .nav-btn.active {
-  color: #23272f;
+  color: #6c63ff;
 }
 
-/* Responsive Adjustments */
-@media (min-width: 480px) {
+.nav-btn.active svg {
+  stroke: #6c63ff;
+}
+
+@media (min-width: 601px) {
   .app-container {
     max-width: 480px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 380px) {
-  .app-title {
-    font-size: 22px;
-  }
-  
-  .section-title {
-    font-size: 16px;
-  }
-  
-  .category-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .destination-card {
-    min-width: 220px;
-  }
-  
-  .nearby-image {
-    width: 90px;
-    height: 90px;
   }
 } 
