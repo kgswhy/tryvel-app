@@ -1,15 +1,236 @@
-/* Loading Page Styles */
-body {
+/* Global Reset & Base Styles */
+* {
   margin: 0;
   padding: 0;
-  background: #a2aab0;
-  height: 100vh;
-  width: 100vw;
-  font-family: 'Arial Black', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #23272f;
+  background-color: #aeb4b9;
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex {
   display: flex;
-  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
   align-items: center;
-  min-height: 100vh;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #eaf1f7;
+  color: #23272f;
+}
+
+/* Form Elements */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* Loading Page Styles */
+body, html {
+  background: #f8fafc;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #23272f;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  color: #23272f;
+  margin-top: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f0f0f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+/* Clean card style */
+.card, .pick-card, .list-item {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 0;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover, .pick-card:hover, .list-item:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+/* Clean button style */
+button, .btn, .action-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: #417491;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(65, 116, 145, 0.10);
+}
+button:hover, .btn:hover, .action-btn:hover {
+  background: #365d73;
+  transform: translateY(-1px);
+}
+
+/* Clean input style */
+input[type="text"], input[type="email"], input[type="password"] {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #23272f;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  border-color: #417491;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(65, 116, 145, 0.10);
+}
+
+/* Section subtitle */
+.section-subtitle {
+  color: #7a8594;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 24px;
 }
 
 .container {
@@ -147,28 +368,6 @@ label {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-}
-
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 12px;
-  background: #f7fafd;
-  font-size: 1.05rem;
-  outline: none;
-  transition: all 0.2s;
-  box-sizing: border-box;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="text"]:focus {
-  border-color: #417491;
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(65, 116, 145, 0.1);
 }
 
 .toggle-password {
