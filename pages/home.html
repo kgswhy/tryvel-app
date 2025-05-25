@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Picks - Discover Amazing Places</title>
+  <title>Home - Top Picks 2025</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/home.css">
 </head>
 <body class="home-page">
   <div class="app-container">
@@ -19,190 +18,241 @@
       </div>
     </div>
 
-    <!-- Header -->
-    <header class="home-header">
-      <div class="header-content">
-        <h1 class="app-title">Top Picks</h1>
-        <div class="header-actions">
-          <button class="notification-btn" aria-label="Notifications">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-            </svg>
-          </button>
+    <!-- Hero Image -->
+    <div class="home-hero">
+      <div class="home-hero-content">
+        <div class="home-user-info">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="home-avatar">
+          <div class="home-greeting">
+            <span>Good to see you back!</span>
+            <h2>Austin Pulupulu</h2>
+          </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="home-search-container" onclick="window.location.href='search.html'">
+          <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" class="home-search-input" placeholder="Search destinations..." readonly>
         </div>
       </div>
-      <div class="search-container">
-        <div class="search-bar">
-          <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-          <input type="text" placeholder="Search destinations" class="search-input">
-        </div>
-      </div>
-    </header>
+    </div>
 
-    <!-- Categories -->
-    <section class="categories-section">
-      <div class="section-header">
-        <h2 class="section-title">Categories</h2>
-        <a href="#" class="see-all-link">See All</a>
+    <!-- Home Content -->
+    <div class="detail-content home-content">
+      <!-- Categories Section -->
+      <div class="detail-section">
+        <div class="section-header">
+          <h2>Categories</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="categories-grid">
+          <div class="category-item">
+            <div class="category-icon beach">
+              <svg width="24" height="24" fill="none" stroke="#FF8A65" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 17a7 7 0 0 0-14 0"/>
+                <path d="M18 17H4M22 17h-4M12 9v4M8 13v-2M16 13v-2M12 3v2"/>
+              </svg>
+            </div>
+            <span>Beach</span>
+          </div>
+          <div class="category-item">
+            <div class="category-icon mountain">
+              <svg width="24" height="24" fill="none" stroke="#4FC3F7" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M8 3l4 8 5-5 5 15H2L8 3z"/>
+              </svg>
+            </div>
+            <span>Mountain</span>
+          </div>
+          <div class="category-item">
+            <div class="category-icon restaurant">
+              <svg width="24" height="24" fill="none" stroke="#EC407A" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M7 10h10M9 14h6M9 18h6M6.5 6C5.672 6 5 6.672 5 7.5S5.672 9 6.5 9 8 8.328 8 7.5 7.328 6 6.5 6zM17.5 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5S19 8.328 19 7.5 18.328 6 17.5 6z"/>
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+              </svg>
+            </div>
+            <span>Food</span>
+          </div>
+          <div class="category-item">
+            <div class="category-icon park">
+              <svg width="24" height="24" fill="none" stroke="#66BB6A" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 22v-8m0 0V7m0 7H7m5 0h5"/>
+                <path d="M16 5l-4-2-4 2M16 5v3c0 1.1.9 2 2 2h0M16 5l-4 2-4-2M4 11h0c1.1 0 2-1 2-2V6"/>
+                <path d="M20 22v-4a2 2 0 1 0-4 0v4M4 22v-4a2 2 0 1 1 4 0v4"/>
+              </svg>
+            </div>
+            <span>Park</span>
+          </div>
+        </div>
       </div>
-      <div class="categories-list">
-        <div class="category-item">
-          <div class="category-icon beach">🏖️</div>
-          <div class="category-name">Beach</div>
-        </div>
-        <div class="category-item">
-          <div class="category-icon mountain">⛰️</div>
-          <div class="category-name">Mountain</div>
-        </div>
-        <div class="category-item">
-          <div class="category-icon city">🏙️</div>
-          <div class="category-name">City</div>
-        </div>
-        <div class="category-item">
-          <div class="category-icon food">🍽️</div>
-          <div class="category-name">Food</div>
-        </div>
-        <div class="category-item">
-          <div class="category-icon activity">🏄‍♂️</div>
-          <div class="category-name">Activity</div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Popular Destinations -->
-    <section class="destinations-section">
-      <div class="section-header">
-        <h2 class="section-title">Popular Destinations</h2>
-        <a href="#" class="see-all-link">See All</a>
-      </div>
-      <div class="destinations-list">
-        <div class="destination-card">
-          <div class="destination-image">
-            <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Bali">
-            <div class="destination-bookmark">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/></svg>
-            </div>
-          </div>
-          <div class="destination-info">
-            <h3 class="destination-name">Bali, Indonesia</h3>
-            <div class="destination-meta">
-              <div class="destination-rating">
-                <svg width="16" height="16" fill="#FFD700" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span>4.8</span>
-              </div>
-              <div class="destination-location">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                <span>Denpasar</span>
-              </div>
-            </div>
-          </div>
+      <!-- Featured Places Section -->
+      <div class="detail-section">
+        <div class="section-header">
+          <h2>Featured Places</h2>
+          <a href="#" class="view-all">View All</a>
         </div>
-
-        <div class="destination-card">
-          <div class="destination-image">
-            <img src="https://images.unsplash.com/photo-1573790387438-4da905039392?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Yogyakarta">
-            <div class="destination-bookmark">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/></svg>
-            </div>
-          </div>
-          <div class="destination-info">
-            <h3 class="destination-name">Yogyakarta</h3>
-            <div class="destination-meta">
-              <div class="destination-rating">
-                <svg width="16" height="16" fill="#FFD700" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span>4.7</span>
+        <div class="places-carousel">
+          <div class="pick-card modern-card">
+            <div class="pick-img-wrap">
+              <img class="pick-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Arborea Cafe">
+              <div class="pick-gradient"></div>
+              <div class="pick-info">
+                <span class="pick-category">Nature</span>
+                <button class="bookmark-btn" aria-label="Bookmark">
+                  <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+                  </svg>
+                </button>
               </div>
-              <div class="destination-location">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                <span>Central Java</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nearby Attractions -->
-    <section class="nearby-section">
-      <div class="section-header">
-        <h2 class="section-title">Nearby Attractions</h2>
-        <a href="#" class="see-all-link">See All</a>
-      </div>
-      <div class="nearby-list">
-        <div class="nearby-card">
-          <div class="nearby-image">
-            <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Senada Coffee">
-          </div>
-          <div class="nearby-info">
-            <h3 class="nearby-name">Senada Coffee</h3>
-            <div class="nearby-meta">
-              <div class="nearby-distance">2.3 km</div>
-              <div class="nearby-rating">
-                <svg width="16" height="16" fill="#FFD700" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span>4.5</span>
+              <div class="pick-overlay-bottom">
+                <span class="pick-title">Arborea Cafe</span>
+                <span class="pick-rating">
+                  <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                  4.5
+                </span>
               </div>
             </div>
-            <div class="nearby-address">Palmerah, Jakarta Barat</div>
           </div>
-        </div>
-
-        <div class="nearby-card">
-          <div class="nearby-image">
-            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Mall Of Indonesia">
-          </div>
-          <div class="nearby-info">
-            <h3 class="nearby-name">Mall Of Indonesia</h3>
-            <div class="nearby-meta">
-              <div class="nearby-distance">5.1 km</div>
-              <div class="nearby-rating">
-                <svg width="16" height="16" fill="#FFD700" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span>4.6</span>
+          
+          <div class="pick-card modern-card">
+            <div class="pick-img-wrap">
+              <img class="pick-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Seafood Paradise">
+              <div class="pick-gradient"></div>
+              <div class="pick-info">
+                <span class="pick-category">Culinary</span>
+                <button class="bookmark-btn" aria-label="Bookmark">
+                  <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="pick-overlay-bottom">
+                <span class="pick-title">Seafood Paradise</span>
+                <span class="pick-rating">
+                  <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                  4.7
+                </span>
               </div>
             </div>
-            <div class="nearby-address">Kelapa Gading, Jakarta Utara</div>
           </div>
-        </div>
-
-        <div class="nearby-card">
-          <div class="nearby-image">
-            <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Dorei Donuts">
-          </div>
-          <div class="nearby-info">
-            <h3 class="nearby-name">Dorei Donuts</h3>
-            <div class="nearby-meta">
-              <div class="nearby-distance">1.8 km</div>
-              <div class="nearby-rating">
-                <svg width="16" height="16" fill="#FFD700" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span>4.7</span>
+          
+          <div class="pick-card modern-card">
+            <div class="pick-img-wrap">
+              <img class="pick-img" src="https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=800&q=80" alt="Sunset Beach Resort">
+              <div class="pick-gradient"></div>
+              <div class="pick-info">
+                <span class="pick-category">Beach</span>
+                <button class="bookmark-btn" aria-label="Bookmark">
+                  <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="pick-overlay-bottom">
+                <span class="pick-title">Sunset Beach Resort</span>
+                <span class="pick-rating">
+                  <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                  4.8
+                </span>
               </div>
             </div>
-            <div class="nearby-address">Palmerah, Jakarta Barat</div>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- Popular Destinations Section -->
+      <div class="detail-section">
+        <div class="section-header">
+          <h2>Popular Destinations</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="destinations-grid">
+          <div class="pick-card modern-card">
+            <div class="pick-img-wrap">
+              <img class="pick-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Museum Di Tengah Kebun">
+              <div class="pick-gradient"></div>
+              <div class="pick-info">
+                <span class="pick-category">Chillin</span>
+                <button class="bookmark-btn" aria-label="Bookmark">
+                  <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="pick-overlay-bottom">
+                <span class="pick-title">Museum Di Tengah Kebun</span>
+                <span class="pick-rating">
+                  <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                  4.3
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pick-card modern-card">
+            <div class="pick-img-wrap">
+              <img class="pick-img" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80" alt="Sirkuit Mandalika">
+              <div class="pick-gradient"></div>
+              <div class="pick-info">
+                <span class="pick-category">Top Spot</span>
+                <button class="bookmark-btn" aria-label="Bookmark">
+                  <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="pick-overlay-bottom">
+                <span class="pick-title">Sirkuit Mandalika</span>
+                <span class="pick-rating">
+                  <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                  4.3
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="action-container">
+        <button class="action-btn">Explore More</button>
+      </div>
+    </div>
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
       <button class="nav-btn active" aria-label="Home">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M9 21V9h6v12"/></svg>
+        <svg width="26" height="26" fill="none" stroke="#6c63ff" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M9 21V9h6v12"/></svg>
+        <span class="nav-label">Home</span>
       </button>
-      <button class="nav-btn" aria-label="Search">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <button class="nav-btn" aria-label="Search" onclick="window.location.href='search.html'">
+        <svg width="26" height="26" fill="none" stroke="#555" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <span class="nav-label">Search</span>
       </button>
-      <button class="nav-btn" aria-label="Bookmark">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/></svg>
+      <button class="nav-btn" aria-label="Bookmark" onclick="window.location.href='saved.html'">
+        <svg width="26" height="26" fill="none" stroke="#555" stroke-width="2" viewBox="0 0 24 24"><path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/></svg>
+        <span class="nav-label">Saved</span>
       </button>
-      <button class="nav-btn" aria-label="Chat">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </button>
-      <button class="nav-btn" aria-label="Profile">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+      <button class="nav-btn" aria-label="Profile" onclick="window.location.href='profile.html'">
+        <svg width="26" height="26" fill="none" stroke="#555" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+        <span class="nav-label">Profile</span>
       </button>
     </nav>
   </div>
 
-  <script src="../js/home.js"></script>
+  <script src="../js/navigation.js"></script>
 </body>
 </html>
