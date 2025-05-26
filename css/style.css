@@ -793,49 +793,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   object-fit: cover;
 }
 
-/* Bookmark Button */
-.bookmark-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  backdrop-filter: blur(4px);
-  z-index: 2;
-}
-
-.bookmark-btn svg {
-  width: 22px;
-  height: 22px;
-  stroke: var(--color-base);
-  stroke-width: 2;
-  transition: all 0.3s ease;
-}
-
-.bookmark-btn:hover {
-  transform: scale(1.1);
-  background: #fff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.bookmark-btn.active {
-  background: var(--color-gold) !important;
-}
-
-.bookmark-btn.active svg {
-  stroke: #fff !important;
-  fill: #fff !important;
-}
-
 /* OVERRIDE: Bookmark di halaman home */
 .home-page .bookmark-btn {
   background: rgba(255, 255, 255, 0.95) !important;
@@ -2382,19 +2339,3 @@ svg {
   letter-spacing: 0.01em;
 }
 
-/* Bookmark animasi efek */
-.bookmark-btn.animating {
-  transform: scale(1.2);
-  transition: transform 0.2s cubic-bezier(.4,2,.6,1);
-}
-.bookmark-btn {
-  transition: transform 0.2s cubic-bezier(.4,2,.6,1);
-}
-
-.saved-page .bookmark-btn.active {
-  background: var(--color-gold) !important;
-}
-.saved-page .bookmark-btn.active svg {
-  stroke: #fff !important;
-  fill: #fff !important;
-} 

@@ -6,7 +6,54 @@
   <title>Search -Tryvels</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/saved.css">
+  <style>
+    .bookmark-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: #7d7d7d;
+      justify-content: center;
+      padding: 0;
+      z-index: 2;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
+    .bookmark-btn svg {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s ease;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .bookmark-btn:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .bookmark-btn.active svg {
+      fill: #FFD600;
+      stroke: #FFD600;
+    }
+
+    .bookmark-btn.animating {
+      transform: scale(1.2);
+    }
+
+    .bookmark-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
 </head>
 <body class="search-page">
   <div class="app-container">
@@ -24,7 +71,7 @@
     <!-- Search Header -->
     <div class="search-hero">
       <div class="search-header">
-        <button class="back-btn" aria-label="Back" onclick="window.location.href='home.html'">
+        <button class="back-btn" data-href="home.html" aria-label="Back">
           <svg class="icon-large" viewBox="0 0 24 24">
             <path d="M15 18l-6-6 6-6"/>
           </svg>
@@ -103,33 +150,33 @@
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
-      <button class="nav-btn" aria-label="Home" onclick="window.location.href='home.html'">
+      <button class="nav-btn" data-href="home.html" aria-label="Home">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <path d="M3 12L12 3l9 9"/>
           <path d="M9 21V9h6v12"/>
         </svg>
         <span class="nav-label">Home</span>
       </button>
-      <button class="nav-btn active" aria-label="Search">
+      <button class="nav-btn active" data-href="search.html" aria-label="Search">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="8"/>
           <path d="M21 21l-4.35-4.35"/>
         </svg>
         <span class="nav-label">Search</span>
       </button>
-      <button class="nav-btn" aria-label="Bookmark" onclick="window.location.href='saved.html'">
+      <button class="nav-btn" data-href="saved.html" aria-label="Bookmark">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
         </svg>
         <span class="nav-label">Saved</span>
       </button>
-      <button class="nav-btn" aria-label="Chat" onclick="window.location.href='chat.html'">
+      <button class="nav-btn" data-href="chat.html" aria-label="Chat">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
         <span class="nav-label">Tryvel Support</span>
       </button>
-      <button class="nav-btn" aria-label="Profile" onclick="window.location.href='profile.html'">
+      <button class="nav-btn" data-href="profile.html" aria-label="Profile">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <circle cx="12" cy="7" r="4"/>
           <path d="M5.5 21a8.38 8.38 0 0 1 13 0"/>
@@ -148,31 +195,35 @@
       // Sample data for demonstration
       const places = [
         {
+          id: 'arborea-cafe',
           name: 'Arborea Cafe',
           category: 'Food',
           rating: 4.5,
           image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
         },
         {
+          id: 'seafood-paradise',
           name: 'Seafood Paradise',
           category: 'Food',
           rating: 4.7,
           image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'
         },
         {
+          id: 'sunset-beach',
           name: 'Sunset Beach Resort',
           category: 'Beach',
           rating: 4.8,
           image: 'https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=800&q=80'
         },
         {
+          id: 'mountain-view',
           name: 'Mountain View Lodge',
           category: 'Mountain',
           rating: 4.6,
           image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'
         },
-        
         {
+          id: 'central-park',
           name: 'Central Park Gardens',
           category: 'Park',
           rating: 4.4,
@@ -183,14 +234,14 @@
       // Function to create a result card
       function createResultCard(place) {
         return `
-          <div class="pick-card modern-card" style="margin: 0 16px 20px 16px; border-radius: 24px; overflow: hidden; background: #2a2a2a; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" onclick="window.location.href='detail.html'">
+          <div class="pick-card modern-card" data-href="detail.html" style="margin: 0 16px 20px 16px; border-radius: 24px; overflow: hidden; background: #2a2a2a; box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
             <div class="pick-img-wrap" style="position: relative; height: 200px;">
               <img class="pick-img" src="${place.image}" alt="${place.name}" style="width:100%; height:100%; object-fit:cover;">
               <div class="pick-gradient" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
               <div class="pick-info" style="position:absolute; top:0; left:0; right:0; padding:16px; display:flex; justify-content:space-between; align-items:center;">
                 <span class="pick-category" style="background:rgba(255,255,255,0.9); color:#23272f; padding:6px 16px; border-radius:16px; font-size:0.9rem; font-weight:500;">${place.category}</span>
-                <button class="bookmark-btn active" aria-label="Bookmark" type="button">
-                  <svg width="24" height="24" viewBox="0 0 24 24">
+                <button class="bookmark-btn" data-id="${place.id}" type="button">
+                  <svg viewBox="0 0 24 24">
                     <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
                   </svg>
                 </button>
@@ -222,6 +273,9 @@
         searchResults.innerHTML = filteredPlaces.length > 0 
           ? filteredPlaces.map(place => createResultCard(place)).join('')
           : '<p class="no-results">No results found</p>';
+
+        // Reinitialize bookmark buttons after updating results
+        initializeBookmarkButtons();
       }
 
       // Function to filter by category
@@ -241,27 +295,68 @@
             item.querySelector('.category-icon').style.background = '#2a2a2a';
           }
         });
+
+        // Reinitialize bookmark buttons after updating results
+        initializeBookmarkButtons();
       };
+
+      // Function to initialize bookmark buttons
+      function initializeBookmarkButtons() {
+        document.querySelectorAll('.bookmark-btn').forEach(btn => {
+          const id = btn.dataset.id;
+          const savedBookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
+          if (savedBookmarks.includes(id)) {
+            btn.classList.add('active');
+          }
+        });
+      }
 
       // Add event listener for search input
       searchInput.addEventListener('input', handleSearch);
 
       // Initial search results
       handleSearch();
+
+      // Navigation click handlers
+      document.querySelectorAll('.nav-btn[data-href]').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const href = this.dataset.href;
+          if (href) {
+            window.location.href = href;
+          }
+        });
+      });
+
+      // Back button handler
+      document.querySelector('.back-btn').addEventListener('click', function() {
+        const href = this.dataset.href;
+        if (href) {
+          window.location.href = href;
+        }
+      });
+
+      // Category click handlers
+      document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const category = this.dataset.category;
+          filterByCategory(category);
+        });
+      });
     });
 
-    // Toggle bookmark active state
-    document.querySelectorAll('.bookmark-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        btn.classList.toggle('active');
-        btn.classList.add('animating');
-        setTimeout(()=>btn.classList.remove('animating'), 300);
-      });
+    // Card click handlers
+    document.addEventListener('click', function(e) {
+      const card = e.target.closest('.pick-card');
+      if (card && !e.target.closest('.bookmark-btn')) {
+        const href = card.dataset.href;
+        if (href) {
+          window.location.href = href;
+        }
+      }
     });
   </script>
 
   <script src="../js/navigation.js"></script>
+  <script src="../js/bookmark-handler.js"></script>
 </body>
 </html> 

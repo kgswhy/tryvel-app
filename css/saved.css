@@ -75,20 +75,6 @@
   object-fit: cover;
 }
 
-.bookmark-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: none;
-  border: none;
-  color: #fff;
-  padding: 4px;
-  cursor: pointer;
-}
-
-.bookmark-btn.active {
-  color: #9CA4A9;
-}
 
 .saved-info {
   padding: 12px;
