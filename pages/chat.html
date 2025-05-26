@@ -176,19 +176,19 @@
 
 function getResponse(message) {
   message = message.toLowerCase();
-  if (message.includes('rekomendasi') || message.includes('destinasi') || message.includes('tempat wisata')) {
+  if (message.includes('recommendation') || message.includes('destinasi') || message.includes('tempat wisata')) {
     return responses.recommendation;
-  } else if (message.includes('jam') || message.includes('buka') || message.includes('operasional')) {
+  } else if (message.includes('hours') || message.includes('buka') || message.includes('operasional')) {
     return responses.hours;
-  } else if (message.includes('pesan') || message.includes('booking') || message.includes('paket')) {
+  } else if (message.includes('booking') || message.includes('booking') || message.includes('paket')) {
     return responses.booking;
   } else if (message.includes('transport') || message.includes('kendaraan') || message.includes('mobil') || message.includes('antar')) {
     return responses.transport;
-  } else if (message.includes('alamat') || message.includes('kantor') || message.includes('lokasi')) {
+  } else if (message.includes('office') || message.includes('kantor') || message.includes('lokasi')) {
     return responses.office;
-  } else if (message.includes('harga') || message.includes('biaya') || message.includes('murah') || message.includes('mahal')) {
+  } else if (message.includes('price') || message.includes('biaya') || message.includes('murah') || message.includes('mahal')) {
     return responses.price;
-  } else if (message.includes('parkir') || message.includes('mobil') || message.includes('kendaraan')) {
+  } else if (message.includes('parking') || message.includes('mobil') || message.includes('kendaraan')) {
     return responses.parking;
   }
   return responses.default;
