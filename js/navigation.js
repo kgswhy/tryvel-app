@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get current page name from URL
-  const currentPage = window.location.pathname.split('/').pop();
+  const currentPage = window.location.pathname.split('/').pop() || 'home.html';
   
   // Set active navigation button based on current page
   const navButtons = document.querySelectorAll('.nav-btn');
@@ -13,45 +13,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Remove all active classes first
     btn.classList.remove('active');
     
-    // Set the correct button to active
-    if (currentPage === 'home.html' && btn.getAttribute('aria-label') === 'Home') {
-      btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
-    } else if (currentPage === 'search.html' && btn.getAttribute('aria-label') === 'Search') {
-      btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
-    } else if (currentPage === 'saved.html' && btn.getAttribute('aria-label') === 'Bookmark') {
-      btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
-    } else if (currentPage === 'chat.html' && btn.getAttribute('aria-label') === 'Chat') {
-      btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
-    } else if (currentPage === 'profile.html' && btn.getAttribute('aria-label') === 'Profile') {
-      btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
+    // Get the button's target page
+    let targetPage;
+    if (btn.hasAttribute('data-href')) {
+      targetPage = btn.getAttribute('data-href');
     } else {
-      // Ensure non-active buttons have the correct color
-      btn.querySelector('svg').setAttribute('stroke', '#555');
+      // For the home button which might not have data-href
+      if (btn.getAttribute('aria-label') === 'Home') {
+        targetPage = 'home.html';
+      }
+    }
+    
+    // Set the correct button to active
+    if ((currentPage === targetPage) || 
+        (currentPage === '' && targetPage === 'home.html') || 
+        (currentPage === 'index.html' && targetPage === 'home.html')) {
+      btn.classList.add('active');
     }
   });
   
-  // Add click handlers to navigation buttons if they don't have them
+  // Add click handlers to navigation buttons if they don't already have them
   navButtons.forEach(btn => {
-    if (!btn.hasAttribute('onclick')) {
+    if (!btn.hasAttribute('data-listener-added')) {
       btn.addEventListener('click', function() {
-        const label = this.getAttribute('aria-label');
-        if (label === 'Home') {
+        const href = this.getAttribute('data-href');
+        if (href) {
+          window.location.href = href;
+        } else if (this.getAttribute('aria-label') === 'Home') {
           window.location.href = 'home.html';
-        } else if (label === 'Search') {
-          window.location.href = 'search.html';
-        } else if (label === 'Bookmark') {
-          window.location.href = 'saved.html';
-        } else if (label === 'Chat') {
-          window.location.href = 'chat.html';
-        } else if (label === 'Profile') {
-          window.location.href = 'profile.html';
         }
       });
+      btn.setAttribute('data-listener-added', 'true');
     }
   });
 });
@@ -61,8 +53,15 @@ function setupUniversalBookmark() {
   document.querySelectorAll('.bookmark-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation(); // Prevent event bubbling to parent card
       this.classList.toggle('active');
-      // Optional: Simpan status bookmark di localStorage jika ada data-id
+      // Add animation class
+      this.classList.add('animating');
+      setTimeout(() => {
+        this.classList.remove('animating');
+      }, 300);
+      
+      // Save bookmark status in localStorage if there's a data-id
       const id = this.dataset.id;
       if (id) {
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '{}');
@@ -70,7 +69,8 @@ function setupUniversalBookmark() {
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
       }
     });
-    // Optional: Set initial state from localStorage
+    
+    // Set initial state from localStorage
     const id = btn.dataset.id;
     if (id) {
       let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '{}');

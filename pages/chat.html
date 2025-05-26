@@ -113,7 +113,7 @@
       <h2>Tryvel Support</h2>
     </div>
     <div class="chat-container" id="chatContainer">
-<div class="chat-bubble customer">Hi there! 👋 I’m your Tryvels travel assistant. Need destination ideas or travel info? Let’s chat!</div>
+<div class="chat-bubble customer">Hi there! 👋 I'm your Tryvels travel assistant. Need destination ideas or travel info? Let's chat!</div>
     </div>
     <form class="chat-input-bar" id="chatForm" autocomplete="off">
       <input type="text" id="chatInput" placeholder="Ask about destinations, travel tips, or booking assistance..." required />
@@ -121,33 +121,33 @@
     </form>
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
-      <button class="nav-btn" aria-label="Home" onclick="window.location.href='home.html'">
+      <button class="nav-btn" data-href="home.html" aria-label="Home">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <path d="M3 12L12 3l9 9"/>
           <path d="M9 21V9h6v12"/>
         </svg>
         <span class="nav-label">Home</span>
       </button>
-      <button class="nav-btn" aria-label="Search" onclick="window.location.href='search.html'">
+      <button class="nav-btn" data-href="search.html" aria-label="Search">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="8"/>
           <path d="M21 21l-4.35-4.35"/>
         </svg>
         <span class="nav-label">Search</span>
       </button>
-      <button class="nav-btn" aria-label="Bookmark" onclick="window.location.href='saved.html'">
+      <button class="nav-btn" data-href="saved.html" aria-label="Bookmark">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
         </svg>
         <span class="nav-label">Saved</span>
       </button>
-      <button class="nav-btn active" aria-label="Chat">
+      <button class="nav-btn active" data-href="chat.html" aria-label="Chat">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
         <span class="nav-label">Tryvel Support</span>
       </button>
-      <button class="nav-btn" aria-label="Profile" onclick="window.location.href='profile.html'">
+      <button class="nav-btn" data-href="profile.html" aria-label="Profile">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
           <circle cx="12" cy="7" r="4"/>
           <path d="M5.5 21a8.38 8.38 0 0 1 13 0"/>
@@ -165,7 +165,7 @@
    const responses = {
   'recommendation': 'Here are some popular destinations you might like:\n• Bali – Beaches & Culture\n• Yogyakarta – History & Culinary\n• Labuan Bajo – Adventure & Diving\n• Malang – Nature & Cool Climate\n\nWould you like to know more about any of these?',
   'hours': 'Our service is available 24/7. Feel free to ask anytime about travel plans!',
-  'booking': 'We can help you find trusted agents to book your trips. Please provide:\n• Destination\n• Departure date\n• Number of travelers\n\nWe’ll find the best options for you.',
+  'booking': 'We can help you find trusted agents to book your trips. Please provide:\n• Destination\n• Departure date\n• Number of travelers\n\nWe'll find the best options for you.',
   'transport': 'Tryvels provides info on transportation options including:\n• Flight tickets\n• Local vehicle rentals\n• Airport shuttles\n\nTell us what you need!',
   'office': 'As a digital platform, Tryvels does not have a physical office. But our support team is always online to help!',
   'price': 'Travel costs vary depending on destination and duration. For example:\n• Day trips start at IDR 300,000\n• 3-day packages from IDR 1,200,000\n\nWant an estimate for a specific place?',
