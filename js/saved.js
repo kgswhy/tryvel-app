@@ -8,12 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   viewToggle.addEventListener('click', (e) => {
     const button = e.target.closest('.toggle-btn');
     if (!button) return;
-
-    // Update active state
     toggleButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
-
-    // Update grid view
     const view = button.dataset.view;
     savedGrid.className = 'saved-grid';
     if (view === 'list') {
@@ -21,13 +17,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle bookmark button clicks
+  // Bookmark persistent logic
   const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+  // Gunakan nama tempat sebagai key
   bookmarkButtons.forEach(button => {
+    const card = button.closest('.saved-card');
+    const title = card.querySelector('h3').textContent.trim();
+    // Set initial state from localStorage
+    const saved = JSON.parse(localStorage.getItem('savedPlaces') || '{}');
+    if (saved[title]) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+    // Toggle logic
     button.addEventListener('click', (e) => {
       e.preventDefault();
       button.classList.toggle('active');
-      // Here you would typically make an API call to update the saved state
+      const saved = JSON.parse(localStorage.getItem('savedPlaces') || '{}');
+      if (button.classList.contains('active')) {
+        saved[title] = true;
+      } else {
+        delete saved[title];
+      }
+      localStorage.setItem('savedPlaces', JSON.stringify(saved));
     });
   });
 }); 
