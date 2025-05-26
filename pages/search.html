@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search -Tryvels</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/saved.css">
+
 </head>
 <body class="search-page">
   <div class="app-container">
@@ -48,41 +50,41 @@
           <h2>Categories</h2>
         </div>
         <div class="categories-grid">
-          <div class="category-item">
-            <div class="category-icon beach">
-              <svg class="icon-large" viewBox="0 0 24 24">
+          <div class="category-item" onclick="filterByCategory('Beach')" style="cursor: pointer; transition: transform 0.2s;">
+            <div class="category-icon beach" style="background: #2a2a2a; padding: 16px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+              <svg class="icon-large" viewBox="0 0 24 24" style="color: #fff;">
                 <path d="M18 17a7 7 0 0 0-14 0"/>
                 <path d="M18 17H4M22 17h-4M12 9v4M8 13v-2M16 13v-2M12 3v2"/>
               </svg>
             </div>
-            <span>Beach</span>
+            <span style="margin-top: 8px; font-weight: 500;">Beach</span>
           </div>
-          <div class="category-item">
-            <div class="category-icon mountain">
-              <svg class="icon-large" viewBox="0 0 24 24">
+          <div class="category-item" onclick="filterByCategory('Mountain')" style="cursor: pointer; transition: transform 0.2s;">
+            <div class="category-icon mountain" style="background: #2a2a2a; padding: 16px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+              <svg class="icon-large" viewBox="0 0 24 24" style="color: #fff;">
                 <path d="M8 3l4 8 5-5 5 15H2L8 3z"/>
               </svg>
             </div>
-            <span>Mountain</span>
+            <span style="margin-top: 8px; font-weight: 500;">Mountain</span>
           </div>
-          <div class="category-item">
-            <div class="category-icon restaurant">
-              <svg class="icon-large" viewBox="0 0 24 24">
+          <div class="category-item" onclick="filterByCategory('Food')" style="cursor: pointer; transition: transform 0.2s;">
+            <div class="category-icon restaurant" style="background: #2a2a2a; padding: 16px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+              <svg class="icon-large" viewBox="0 0 24 24" style="color: #fff;">
                 <path d="M7 10h10M9 14h6M9 18h6M6.5 6C5.672 6 5 6.672 5 7.5S5.672 9 6.5 9 8 8.328 8 7.5 7.328 6 6.5 6zM17.5 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5S19 8.328 19 7.5 18.328 6 17.5 6z"/>
                 <rect x="3" y="3" width="18" height="18" rx="2"/>
               </svg>
             </div>
-            <span>Food</span>
+            <span style="margin-top: 8px; font-weight: 500;">Food</span>
           </div>
-          <div class="category-item">
-            <div class="category-icon park">
-              <svg class="icon-large" viewBox="0 0 24 24">
+          <div class="category-item" onclick="filterByCategory('Park')" style="cursor: pointer; transition: transform 0.2s;">
+            <div class="category-icon park" style="background: #2a2a2a; padding: 16px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+              <svg class="icon-large" viewBox="0 0 24 24" style="color: #fff;">
                 <path d="M12 22v-8m0 0V7m0 7H7m5 0h5"/>
                 <path d="M16 5l-4-2-4 2M16 5v3c0 1.1.9 2 2 2h0M16 5l-4 2-4-2M4 11h0c1.1 0 2-1 2-2V6"/>
                 <path d="M20 22v-4a2 2 0 1 0-4 0v4M4 22v-4a2 2 0 1 1 4 0v4"/>
               </svg>
             </div>
-            <span>Park</span>
+            <span style="margin-top: 8px; font-weight: 500;">Park</span>
           </div>
         </div>
       </div>
@@ -146,13 +148,13 @@
       const places = [
         {
           name: 'Arborea Cafe',
-          category: 'Nature',
+          category: 'Food',
           rating: 4.5,
           image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
         },
         {
           name: 'Seafood Paradise',
-          category: 'Culinary',
+          category: 'Food',
           rating: 4.7,
           image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'
         },
@@ -161,32 +163,46 @@
           category: 'Beach',
           rating: 4.8,
           image: 'https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          name: 'Mountain View Lodge',
+          category: 'Mountain',
+          rating: 4.6,
+          image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          name: 'Central Park Gardens',
+          category: 'Park',
+          rating: 4.4,
+          image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80'
         }
       ];
 
       // Function to create a result card
       function createResultCard(place) {
         return `
-          <div class="pick-card modern-card">
-            <div class="pick-img-wrap">
-              <img class="pick-img" src="${place.image}" alt="${place.name}">
-              <div class="pick-gradient"></div>
-              <div class="pick-info">
-                <span class="pick-category">${place.category}</span>
-                <button class="bookmark-btn" aria-label="Bookmark">
-                  <svg width="22" height="22" fill="none" stroke="var(--color-white)" stroke-width="2" viewBox="0 0 24 24">
+          <div class="pick-card modern-card" style="margin: 0 16px 20px 16px; border-radius: 24px; overflow: hidden; background: #2a2a2a; box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
+            <div class="pick-img-wrap" style="position: relative; height: 200px;">
+              <img class="pick-img" src="${place.image}" alt="${place.name}" style="width:100%; height:100%; object-fit:cover;">
+              <div class="pick-gradient" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
+              <div class="pick-info" style="position:absolute; top:0; left:0; right:0; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+                <span class="pick-category" style="background:rgba(255,255,255,0.9); color:#23272f; padding:6px 16px; border-radius:16px; font-size:0.9rem; font-weight:500;">${place.category}</span>
+                <button class="bookmark-btn" aria-label="Bookmark" style="background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                  <svg width="20" height="20" fill="none" stroke="#23272f" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
                   </svg>
                 </button>
               </div>
-              <div class="pick-overlay-bottom">
-                <span class="pick-title">${place.name}</span>
-                <span class="pick-rating">
-                  <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                  ${place.rating}
-                </span>
+              <div class="pick-overlay-bottom" style="position:absolute; bottom:0; left:0; right:0; padding:20px 16px; color:white;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span class="pick-title" style="font-size:1.2rem; font-weight:600;">${place.name}</span>
+                  <span class="pick-rating" style="display:flex; align-items:center; background:rgba(255,255,255,0.9); color:#23272f; padding:4px 12px; border-radius:12px; font-weight:600;">
+                    <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24" style="margin-right:4px;">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    ${place.rating}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -205,6 +221,25 @@
           ? filteredPlaces.map(place => createResultCard(place)).join('')
           : '<p class="no-results">No results found</p>';
       }
+
+      // Function to filter by category
+      window.filterByCategory = function(category) {
+        const filteredPlaces = places.filter(place => place.category === category);
+        searchResults.innerHTML = filteredPlaces.length > 0 
+          ? filteredPlaces.map(place => createResultCard(place)).join('')
+          : '<p class="no-results">No places found in this category</p>';
+        
+        // Add active state to selected category
+        document.querySelectorAll('.category-item').forEach(item => {
+          if (item.querySelector('span').textContent === category) {
+            item.style.transform = 'scale(1.05)';
+            item.querySelector('.category-icon').style.background = '#4a4a4a';
+          } else {
+            item.style.transform = 'scale(1)';
+            item.querySelector('.category-icon').style.background = '#2a2a2a';
+          }
+        });
+      };
 
       // Add event listener for search input
       searchInput.addEventListener('input', handleSearch);
