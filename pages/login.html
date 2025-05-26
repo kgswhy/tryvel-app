@@ -75,6 +75,7 @@
       padding: 0 20px;
       margin-bottom: 20px;
       height: 56px;
+      position: relative;
     }
     
     .input-container svg {
@@ -182,6 +183,84 @@
     .signup-content {
       display: none;
     }
+
+    /* Validation Styles */
+    .validation-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      display: none;
+    }
+
+    .validation-icon.valid {
+      color: #4CAF50;
+    }
+
+    .validation-icon.invalid {
+      color: #ff4444;
+    }
+
+    .input-container {
+      margin-bottom: 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .error-message {
+      color: #ff4444;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      margin-left: 0;
+      display: none;
+      padding: 6px 12px;
+      background-color: rgba(255, 68, 68, 0.08);
+      border-radius: 6px;
+      border-left: 3px solid #ff4444;
+      width: 100%;
+      box-sizing: border-box;
+      position: static;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .input-container input:focus {
+      outline: none;
+      border-color: #9CA4A9;
+    }
+
+    .input-container input.valid {
+      border-color: #4CAF50;
+      background-color: rgba(76, 175, 80, 0.05);
+    }
+
+    .input-container input.invalid {
+      border-color: #ff4444;
+      background-color: rgba(255, 68, 68, 0.05);
+    }
+
+    .input-container input.valid:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    }
+
+    .input-container input.invalid:focus {
+      border-color: #ff4444;
+      box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+    }
   </style>
 </head>
 <body class="login-page">
@@ -226,6 +305,13 @@
                 <path d="M22 6l-10 7L2 6"/>
               </svg>
               <input type="email" id="email" placeholder="Your email" required>
+              <svg class="validation-icon valid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+              <svg class="validation-icon invalid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+              </svg>
+              <div class="error-message"></div>
             </div>
           </div>
           
@@ -237,6 +323,13 @@
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
               <input type="password" id="password" placeholder="Your password" required>
+              <svg class="validation-icon valid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+              <svg class="validation-icon invalid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+              </svg>
+              <div class="error-message"></div>
               <button type="button" class="toggle-password">
                 <svg width="20" height="20" fill="none" stroke="var(--color-base)" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -292,6 +385,13 @@
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
               <input type="text" id="signup-name" placeholder="Your full name" required>
+              <svg class="validation-icon valid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+              <svg class="validation-icon invalid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+              </svg>
+              <div class="error-message"></div>
             </div>
           </div>
           
@@ -303,6 +403,13 @@
                 <path d="M22 6l-10 7L2 6"/>
               </svg>
               <input type="email" id="signup-email" placeholder="Your email" required>
+              <svg class="validation-icon valid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+              <svg class="validation-icon invalid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+              </svg>
+              <div class="error-message"></div>
             </div>
           </div>
           
@@ -314,6 +421,13 @@
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
               <input type="password" id="signup-password" placeholder="Create password" required>
+              <svg class="validation-icon valid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+              <svg class="validation-icon invalid" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+              </svg>
+              <div class="error-message"></div>
               <button type="button" class="toggle-password" data-for="signup-password">
                 <svg width="20" height="20" fill="none" stroke="var(--color-base)" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -358,44 +472,154 @@
   </div>
 
   <script>
-    // Tab switching functionality
-    document.getElementById('login-tab').addEventListener('click', function() {
-      document.getElementById('login-tab').classList.add('active');
-      document.getElementById('signup-tab').classList.remove('active');
-      document.getElementById('login-form').style.display = 'block';
-      document.getElementById('signup-form').style.display = 'none';
-    });
-    
-    document.getElementById('signup-tab').addEventListener('click', function() {
-      document.getElementById('signup-tab').classList.add('active');
-      document.getElementById('login-tab').classList.remove('active');
-      document.getElementById('signup-form').style.display = 'block';
-      document.getElementById('login-form').style.display = 'none';
-    });
-    
-    // Password visibility toggle
-    document.querySelectorAll('.toggle-password').forEach(function(button) {
-      button.addEventListener('click', function() {
-        const passwordId = this.getAttribute('data-for') || 'password';
-        const passwordInput = document.getElementById(passwordId);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form elements
+      const loginForm = document.querySelector('.login-form');
+      const signupForm = document.querySelector('.signup-form');
+      const loginTab = document.getElementById('login-tab');
+      const signupTab = document.getElementById('signup-tab');
+      const loginContent = document.getElementById('login-form');
+      const signupContent = document.getElementById('signup-form');
+
+      // Validation rules
+      const validationRules = {
+        email: {
+          pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          message: 'Please enter a valid email address'
+        },
+        password: {
+          minLength: 8,
+          pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/,
+          message: 'Password must be at least 8 characters and include letters and numbers'
+        },
+        name: {
+          minLength: 2,
+          pattern: /^[A-Za-z\s]{2,}$/,
+          message: 'Name must be at least 2 characters and contain only letters'
+        }
+      };
+
+      // Function to validate input
+      function validateInput(input, rules) {
+        const value = input.value.trim();
+        const errorMessage = input.parentElement.querySelector('.error-message');
+        const validIcon = input.parentElement.querySelector('.validation-icon.valid');
+        const invalidIcon = input.parentElement.querySelector('.validation-icon.invalid');
+
+        if (!value) {
+          showError(input, errorMessage, validIcon, invalidIcon, 'This field is required');
+          return false;
+        }
+
+        if (rules.minLength && value.length < rules.minLength) {
+          showError(input, errorMessage, validIcon, invalidIcon, `Must be at least ${rules.minLength} characters`);
+          return false;
+        }
+
+        if (rules.pattern && !rules.pattern.test(value)) {
+          showError(input, errorMessage, validIcon, invalidIcon, rules.message);
+          return false;
+        }
+
+        showValid(input, errorMessage, validIcon, invalidIcon);
+        return true;
+      }
+
+      // Function to show error state
+      function showError(input, errorMessage, validIcon, invalidIcon, message) {
+        input.classList.remove('valid');
+        input.classList.add('invalid');
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+        validIcon.style.display = 'none';
+        invalidIcon.style.display = 'block';
+      }
+
+      // Function to show valid state
+      function showValid(input, errorMessage, validIcon, invalidIcon) {
+        input.classList.remove('invalid');
+        input.classList.add('valid');
+        errorMessage.style.display = 'none';
+        validIcon.style.display = 'block';
+        invalidIcon.style.display = 'none';
+      }
+
+      // Add real-time validation to all inputs
+      document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]').forEach(input => {
+        input.addEventListener('input', function() {
+          const rules = validationRules[this.id.replace('signup-', '').replace('email', 'email').replace('password', 'password').replace('name', 'name')];
+          if (rules) {
+            validateInput(this, rules);
+          }
+        });
+        input.addEventListener('blur', function() {
+          const rules = validationRules[this.id.replace('signup-', '').replace('email', 'email').replace('password', 'password').replace('name', 'name')];
+          if (rules) {
+            validateInput(this, rules);
+          }
+        });
+      });
+
+      // Toggle password visibility
+      document.querySelectorAll('.toggle-password').forEach(button => {
+        button.addEventListener('click', function() {
+          const input = this.parentElement.querySelector('input');
+          const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+          input.setAttribute('type', type);
+          
+          // Update icon
+          const icon = this.querySelector('svg');
+          if (type === 'text') {
+            icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+          } else {
+            icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+          }
+        });
+      });
+
+      // Tab switching
+      loginTab.addEventListener('click', function() {
+        loginTab.classList.add('active');
+        signupTab.classList.remove('active');
+        loginContent.style.display = 'block';
+        signupContent.style.display = 'none';
+      });
+
+      signupTab.addEventListener('click', function() {
+        signupTab.classList.add('active');
+        loginTab.classList.remove('active');
+        signupContent.style.display = 'block';
+        loginContent.style.display = 'none';
+      });
+
+      // Form submission
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
         
-        if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-          this.innerHTML = `
-            <svg width="20" height="20" fill="none" stroke="var(--color-base)" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M3 3l18 18"/>
-            </svg>
-          `;
-        } else {
-          passwordInput.type = 'password';
-          this.innerHTML = `
-            <svg width="20" height="20" fill="none" stroke="var(--color-base)" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          `;
+        const isEmailValid = validateInput(email, validationRules.email);
+        const isPasswordValid = validateInput(password, validationRules.password);
+
+        if (isEmailValid && isPasswordValid) {
+          // Proceed with login
+          console.log('Login form is valid');
+        }
+      });
+
+      signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('signup-name');
+        const email = document.getElementById('signup-email');
+        const password = document.getElementById('signup-password');
+        
+        const isNameValid = validateInput(name, validationRules.name);
+        const isEmailValid = validateInput(email, validationRules.email);
+        const isPasswordValid = validateInput(password, validationRules.password);
+
+        if (isNameValid && isEmailValid && isPasswordValid) {
+          // Proceed with signup
+          console.log('Signup form is valid');
         }
       });
     });
