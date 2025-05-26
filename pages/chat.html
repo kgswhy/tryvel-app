@@ -113,11 +113,11 @@
       <h2>Tryvel Support</h2>
     </div>
     <div class="chat-container" id="chatContainer">
-      <div class="chat-bubble customer">Halo, ada yang bisa kami bantu?</div>
+      <div class="chat-bubble customer">Welcome to Sayap Suci Customer Service! How can we assist you today? 🍗</div>
     </div>
     <form class="chat-input-bar" id="chatForm" autocomplete="off">
-      <input type="text" id="chatInput" placeholder="Tulis pesan..." required />
-      <button type="submit">Kirim</button>
+      <input type="text" id="chatInput" placeholder="Ask about our menu, hours, or make a reservation..." required />
+      <button type="submit">Send</button>
     </form>
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
@@ -161,25 +161,68 @@
     const chatForm = document.getElementById('chatForm');
     const chatInput = document.getElementById('chatInput');
     const chatContainer = document.getElementById('chatContainer');
+
+    // Common restaurant questions and answers
+    const responses = {
+      'menu': 'Our signature dishes include:\n• Spicy Honey Wings\n• BBQ Wings\n• Garlic Parmesan Wings\n• Buffalo Wings\n\nWould you like to know more about any specific dish?',
+      'hours': 'We are open daily from 10:00 AM to 10:00 PM. Last order is at 9:30 PM.',
+      'reservation': 'To make a reservation, please provide:\n• Date and time\n• Number of guests\n• Contact number\n\nWe\'ll confirm your booking shortly!',
+      'delivery': 'We offer delivery through our partner apps:\n• GoFood\n• GrabFood\n• Shopeefood\n\nDelivery hours: 10:00 AM - 9:30 PM',
+      'location': 'We are located at:\nJl. Boulevard Raya Blok WA 2 No. 31\nKelapa Gading, North Jakarta\n\nYou can find directions on Google Maps!',
+      'price': 'Our price range is IDR 50,000 - IDR 150,000 per person.\n\nWings start from IDR 45,000 for 6 pieces.',
+      'parking': 'Yes, we have parking available:\n• Street parking\n• Mall parking (connected)\n• Valet service (available)',
+      'default': 'Thank you for your message! For immediate assistance, you can also call us at +62 21 4585 7890. Our staff will be happy to help you!'
+    };
+
+    function getResponse(message) {
+      message = message.toLowerCase();
+      if (message.includes('menu') || message.includes('food') || message.includes('dish')) {
+        return responses.menu;
+      } else if (message.includes('hour') || message.includes('open') || message.includes('time')) {
+        return responses.hours;
+      } else if (message.includes('reserv') || message.includes('book') || message.includes('table')) {
+        return responses.reservation;
+      } else if (message.includes('deliver') || message.includes('order') || message.includes('takeaway')) {
+        return responses.delivery;
+      } else if (message.includes('where') || message.includes('location') || message.includes('address')) {
+        return responses.location;
+      } else if (message.includes('price') || message.includes('cost') || message.includes('expensive')) {
+        return responses.price;
+      } else if (message.includes('park') || message.includes('car')) {
+        return responses.parking;
+      }
+      return responses.default;
+    }
+
     chatForm.addEventListener('submit', function(e) {
       e.preventDefault();
       const msg = chatInput.value.trim();
       if (!msg) return;
-      // Tambah bubble user
+
+      // Add user message
       const userBubble = document.createElement('div');
       userBubble.className = 'chat-bubble user';
       userBubble.textContent = msg;
       chatContainer.appendChild(userBubble);
       chatInput.value = '';
       chatContainer.scrollTop = chatContainer.scrollHeight;
-      // Simulasi balasan customer
+
+      // Simulate typing indicator
+      const typingBubble = document.createElement('div');
+      typingBubble.className = 'chat-bubble customer';
+      typingBubble.textContent = '...';
+      chatContainer.appendChild(typingBubble);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      // Get and display response after a short delay
       setTimeout(() => {
+        chatContainer.removeChild(typingBubble);
         const custBubble = document.createElement('div');
         custBubble.className = 'chat-bubble customer';
-        custBubble.textContent = 'Terima kasih, pesan Anda sudah kami terima.';
+        custBubble.innerHTML = getResponse(msg).replace(/\n/g, '<br>');
         chatContainer.appendChild(custBubble);
         chatContainer.scrollTop = chatContainer.scrollHeight;
-      }, 900);
+      }, 1500);
     });
   </script>
 </body>
