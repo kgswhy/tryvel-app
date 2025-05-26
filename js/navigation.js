@@ -49,4 +49,30 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
-}); 
+});
+
+// Universal Bookmark Toggle
+function setupUniversalBookmark() {
+  document.querySelectorAll('.bookmark-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.classList.toggle('active');
+      // Optional: Simpan status bookmark di localStorage jika ada data-id
+      const id = this.dataset.id;
+      if (id) {
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '{}');
+        bookmarks[id] = this.classList.contains('active');
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+      }
+    });
+    // Optional: Set initial state from localStorage
+    const id = btn.dataset.id;
+    if (id) {
+      let bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '{}');
+      if (bookmarks[id]) btn.classList.add('active');
+      else btn.classList.remove('active');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupUniversalBookmark); 

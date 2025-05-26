@@ -781,7 +781,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   position: absolute;
   top: 8px;
   right: 8px;
-  background: var(--color-base-transparent-dark);
+  background: #fff !important;
   border: none;
   width: 36px;
   height: 36px;
@@ -798,26 +798,22 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   width: 22px;
   height: 22px;
   display: block;
-  stroke: var(--color-gold) !important;
+  stroke: #E53935 !important;
   fill: none;
   transition: stroke 0.2s, fill 0.2s;
 }
 
 .bookmark-btn.active {
-  background: var(--color-base);
+  background: #fff !important;
+  border: 2px solid #E53935;
 }
 
 .bookmark-btn.active svg {
-  stroke: var(--color-gold) !important;
+  stroke: #E53935 !important;
 }
 
 .bookmark-btn:hover {
-  background: var(--color-base-dark);
-  transform: translateY(-1px);
-}
-
-.bookmark-btn:hover svg {
-  stroke: var(--color-gold);
+  background: #ffeaea !important;
 }
 
 .saved-info {
