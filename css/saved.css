@@ -123,9 +123,14 @@
 .stars {
   display: flex;
   align-items: center;
-  color: #FFD600;
+  color: var(--color-gold);
   font-size: 0.85rem;
   letter-spacing: -1px;
+}
+
+.stars svg {
+  fill: var(--color-gold) !important;
+  stroke: var(--color-gold) !important;
 }
 
 .rating-value {
