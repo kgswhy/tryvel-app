@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (currentPage === 'saved.html' && btn.getAttribute('aria-label') === 'Bookmark') {
       btn.classList.add('active');
       btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
+    } else if (currentPage === 'chat.html' && btn.getAttribute('aria-label') === 'Chat') {
+      btn.classList.add('active');
+      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
     } else if (currentPage === 'profile.html' && btn.getAttribute('aria-label') === 'Profile') {
       btn.classList.add('active');
       btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
@@ -43,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
           window.location.href = 'search.html';
         } else if (label === 'Bookmark') {
           window.location.href = 'saved.html';
+        } else if (label === 'Chat') {
+          window.location.href = 'chat.html';
         } else if (label === 'Profile') {
           window.location.href = 'profile.html';
         }

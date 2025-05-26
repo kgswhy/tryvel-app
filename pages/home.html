@@ -6,7 +6,7 @@
   <title>Home -Tryvels 2025</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="home-page">
+<body class="home-page" style="background: #b0c4d6;">
   <div class="app-container">
     <!-- Status Bar -->
     <div class="status-bar">
@@ -18,219 +18,86 @@
       </div>
     </div>
 
-    <!-- Hero Image -->
-    <div class="home-hero">
-      <div class="home-hero-content">
-        <div class="home-user-info">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="home-avatar">
-          <div class="home-greeting">
-            <span>Good to see you back!</span>
-            <h2>Austin Pulupulu</h2>
-          </div>
+    <!-- Header Hero Image -->
+    <div style="position:relative; width:100%; height:160px; border-bottom-left-radius:24px; border-bottom-right-radius:24px; overflow:hidden; margin-bottom: -32px;">
+      <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80' alt='Header' style='width:100%; height:100%; object-fit:cover; display:block;'>
+      <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(34,34,34,0.35);"></div>
+      <!-- Greeting Card on Hero -->
+      <div class="greeting-card" style="position:absolute; left:16px; bottom:16px; right:16px; display:flex; align-items:center; background:rgba(255,255,255,0.92); border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:12px 16px;">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" style="width: 48px; height: 48px; border-radius: 50%; margin-right: 12px;">
+        <div style="flex:1;">
+          <div style="font-size: 1rem; color: #555;">Good to see you back!</div>
+          <div style="font-size: 1.1rem; font-weight: bold; color: #23272f;">Austin Pulupulu</div>
         </div>
-        
-        <!-- Search Bar -->
-        <div class="home-search-container" onclick="window.location.href='search.html'">
-          <svg class="search-icon icon-medium" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="M21 21l-4.35-4.35"/>
-          </svg>
-          <input type="text" class="home-search-input" placeholder="Search destinations..." readonly>
+      </div>
+    </div>
+
+    <!-- Main Title & Subtitle -->
+    <div style="text-align:center; margin: 48px 0 8px 0;">
+      <h1 style="font-size: 2rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 4px;">TOP PICKS 2025</h1>
+      <div style="font-size: 1rem; color: #444; opacity: 0.8;">Try to keep up with the trends..</div>
+    </div>
+
+    <!-- Top Picks List -->
+    <div class="top-picks-list" style="padding: 0 0 80px 0;">
+      <div class="pick-card" style="margin: 0 16px 20px 16px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+        <div class="pick-img-wrap" style="position: relative; height: 180px;">
+          <img class="pick-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Arborea Cafe" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pick-category" style="position:absolute; top:12px; left:12px; background:#ededed; color:#23272f; padding:6px 16px; border-radius:16px; font-size:1rem; font-weight:500;">Culinary</span>
+          <button class="bookmark-btn" aria-label="Bookmark" style="position:absolute; top:12px; right:12px; background:#fff; border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <svg width="22" height="22" fill="none" stroke="#23272f" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            </svg>
+          </button>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding: 12px 16px 8px 16px;">
+          <span style="font-size:1.1rem; font-weight:600; color:#23272f; background:#ededed; border-radius:12px; padding:4px 12px;">Arborea Cafe</span>
+          <span style="display:flex; align-items:center; font-size:1rem; font-weight:600; color:#23272f; background:#fff; border-radius:12px; padding:4px 10px; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+            <svg width="18" height="18" fill="#FFD600" viewBox="0 0 24 24" style="margin-right:4px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            4.5
+          </span>
+        </div>
+      </div>
+      <div class="pick-card" style="margin: 0 16px 20px 16px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+        <div class="pick-img-wrap" style="position: relative; height: 180px;">
+          <img class="pick-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Museum Di Tengah Kebun" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pick-category" style="position:absolute; top:12px; left:12px; background:#ededed; color:#23272f; padding:6px 16px; border-radius:16px; font-size:1rem; font-weight:500;">Chillin</span>
+          <button class="bookmark-btn" aria-label="Bookmark" style="position:absolute; top:12px; right:12px; background:#fff; border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <svg width="22" height="22" fill="none" stroke="#23272f" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            </svg>
+          </button>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding: 12px 16px 8px 16px;">
+          <span style="font-size:1.1rem; font-weight:600; color:#23272f; background:#ededed; border-radius:12px; padding:4px 12px;">Museum Di Tengah Kebun</span>
+          <span style="display:flex; align-items:center; font-size:1rem; font-weight:600; color:#23272f; background:#fff; border-radius:12px; padding:4px 10px; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+            <svg width="18" height="18" fill="#FFD600" viewBox="0 0 24 24" style="margin-right:4px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            4.3
+          </span>
+        </div>
+      </div>
+      <div class="pick-card" style="margin: 0 16px 20px 16px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+        <div class="pick-img-wrap" style="position: relative; height: 180px;">
+          <img class="pick-img" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80" alt="Sirkuit Mandalika" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pick-category" style="position:absolute; top:12px; left:12px; background:#ededed; color:#23272f; padding:6px 16px; border-radius:16px; font-size:1rem; font-weight:500;">Top Spot</span>
+          <button class="bookmark-btn" aria-label="Bookmark" style="position:absolute; top:12px; right:12px; background:#fff; border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <svg width="22" height="22" fill="none" stroke="#23272f" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            </svg>
+          </button>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding: 12px 16px 8px 16px;">
+          <span style="font-size:1.1rem; font-weight:600; color:#23272f; background:#ededed; border-radius:12px; padding:4px 12px;">Sirkuit Mandalika</span>
+          <span style="display:flex; align-items:center; font-size:1rem; font-weight:600; color:#23272f; background:#fff; border-radius:12px; padding:4px 10px; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+            <svg width="18" height="18" fill="#FFD600" viewBox="0 0 24 24" style="margin-right:4px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            4.3
+          </span>
         </div>
       </div>
     </div>
 
     <!-- Home Content -->
-    <div class="detail-content home-content">
-      <!-- Categories Section -->
-      <div class="detail-section">
-        <div class="section-header">
-          <h2>Categories</h2>
-          <a href="#" class="view-all">View All</a>
-        </div>
-        <div class="categories-grid">
-          <div class="category-item">
-            <div class="category-icon beach">
-              <svg class="icon-large" viewBox="0 0 24 24">
-                <path d="M18 17a7 7 0 0 0-14 0"/>
-                <path d="M18 17H4M22 17h-4M12 9v4M8 13v-2M16 13v-2M12 3v2"/>
-              </svg>
-            </div>
-            <span>Beach</span>
-          </div>
-          <div class="category-item">
-            <div class="category-icon mountain">
-              <svg class="icon-large" viewBox="0 0 24 24">
-                <path d="M8 3l4 8 5-5 5 15H2L8 3z"/>
-              </svg>
-            </div>
-            <span>Mountain</span>
-          </div>
-          <div class="category-item">
-            <div class="category-icon restaurant">
-              <svg class="icon-large" viewBox="0 0 24 24">
-                <path d="M7 10h10M9 14h6M9 18h6M6.5 6C5.672 6 5 6.672 5 7.5S5.672 9 6.5 9 8 8.328 8 7.5 7.328 6 6.5 6zM17.5 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5S19 8.328 19 7.5 18.328 6 17.5 6z"/>
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-              </svg>
-            </div>
-            <span>Food</span>
-          </div>
-          <div class="category-item">
-            <div class="category-icon park">
-              <svg class="icon-large" viewBox="0 0 24 24">
-                <path d="M12 22v-8m0 0V7m0 7H7m5 0h5"/>
-                <path d="M16 5l-4-2-4 2M16 5v3c0 1.1.9 2 2 2h0M16 5l-4 2-4-2M4 11h0c1.1 0 2-1 2-2V6"/>
-                <path d="M20 22v-4a2 2 0 1 0-4 0v4M4 22v-4a2 2 0 1 1 4 0v4"/>
-              </svg>
-            </div>
-            <span>Park</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Featured Places Section -->
-      <div class="detail-section">
-        <div class="section-header">
-          <h2>Featured Places</h2>
-          <a href="#" class="view-all">View All</a>
-        </div>
-        <div class="places-carousel">
-          <div class="pick-card modern-card">
-            <div class="pick-img-wrap">
-              <img class="pick-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Arborea Cafe">
-              <div class="pick-gradient"></div>
-              <div class="pick-info">
-                <span class="pick-category">Nature</span>
-                <button class="bookmark-btn" aria-label="Bookmark">
-                  <svg class="icon-medium" viewBox="0 0 24 24">
-                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="pick-overlay-bottom">
-                <span class="pick-title">Arborea Cafe</span>
-                <span class="pick-rating">
-                  <svg class="icon-small icon-filled-gold" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                  4.5
-                </span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="pick-card modern-card">
-            <div class="pick-img-wrap">
-              <img class="pick-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Seafood Paradise">
-              <div class="pick-gradient"></div>
-              <div class="pick-info">
-                <span class="pick-category">Culinary</span>
-                <button class="bookmark-btn" aria-label="Bookmark">
-                  <svg class="icon-medium" viewBox="0 0 24 24">
-                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="pick-overlay-bottom">
-                <span class="pick-title">Seafood Paradise</span>
-                <span class="pick-rating">
-                  <svg class="icon-small icon-filled-gold" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                  4.7
-                </span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="pick-card modern-card">
-            <div class="pick-img-wrap">
-              <img class="pick-img" src="https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=800&q=80" alt="Sunset Beach Resort">
-              <div class="pick-gradient"></div>
-              <div class="pick-info">
-                <span class="pick-category">Beach</span>
-                <button class="bookmark-btn" aria-label="Bookmark">
-                  <svg class="icon-medium" viewBox="0 0 24 24">
-                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="pick-overlay-bottom">
-                <span class="pick-title">Sunset Beach Resort</span>
-                <span class="pick-rating">
-                  <svg class="icon-small icon-filled-gold" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                  4.8
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Popular Destinations Section -->
-      <div class="detail-section">
-        <div class="section-header">
-          <h2>Popular Destinations</h2>
-          <a href="#" class="view-all">View All</a>
-        </div>
-        <div class="destinations-grid">
-          <div class="pick-card modern-card">
-            <div class="pick-img-wrap">
-              <img class="pick-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Museum Di Tengah Kebun">
-              <div class="pick-gradient"></div>
-              <div class="pick-info">
-                <span class="pick-category">Chillin</span>
-                <button class="bookmark-btn" aria-label="Bookmark">
-                  <svg class="icon-medium" viewBox="0 0 24 24">
-                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="pick-overlay-bottom">
-                <span class="pick-title">Museum Di Tengah Kebun</span>
-                <span class="pick-rating">
-                  <svg class="icon-small icon-filled-gold" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                  4.3
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pick-card modern-card">
-            <div class="pick-img-wrap">
-              <img class="pick-img" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80" alt="Sirkuit Mandalika">
-              <div class="pick-gradient"></div>
-              <div class="pick-info">
-                <span class="pick-category">Top Spot</span>
-                <button class="bookmark-btn" aria-label="Bookmark">
-                  <svg class="icon-medium" viewBox="0 0 24 24">
-                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="pick-overlay-bottom">
-                <span class="pick-title">Sirkuit Mandalika</span>
-                <span class="pick-rating">
-                  <svg class="icon-small icon-filled-gold" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                  4.3
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Action Button -->
-      <div class="action-container">
-        <button class="action-btn">Explore More</button>
-      </div>
-    </div>
+   
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
@@ -253,6 +120,12 @@
           <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
         </svg>
         <span class="nav-label">Saved</span>
+      </button>
+      <button class="nav-btn" aria-label="Chat" onclick="window.location.href='chat.html'">
+        <svg class="icon-xlarge" viewBox="0 0 24 24">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span class="nav-label">Chat</span>
       </button>
       <button class="nav-btn" aria-label="Profile" onclick="window.location.href='profile.html'">
         <svg class="icon-xlarge" viewBox="0 0 24 24">
