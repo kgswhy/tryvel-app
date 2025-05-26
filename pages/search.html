@@ -34,23 +34,7 @@
             <circle cx="11" cy="11" r="8"/>
             <path d="M21 21l-4.35-4.35"/>
           </svg>
-          <input type="text" 
-                 class="search-input" 
-                 id="searchInput" 
-                 placeholder="What would you like to go?"
-                 minlength="2"
-                 maxlength="50"
-                 pattern="[A-Za-z0-9\s\-]+"
-                 required>
-          <div class="validation-status" id="validationStatus" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-            <svg class="valid-icon" style="display: none; width: 20px; height: 20px;" viewBox="0 0 24 24">
-              <path fill="#4CAF50" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-            </svg>
-            <svg class="invalid-icon" style="display: none; width: 20px; height: 20px;" viewBox="0 0 24 24">
-              <path fill="#ff4444" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
-            </svg>
-          </div>
-          <div class="error-message" id="searchError" style="display: none; color: #ff4444; font-size: 0.8rem; margin-top: 4px; position: absolute; left: 0; right: 0;"></div>
+          <input type="text" class="search-input" id="searchInput" placeholder="What would you like to go?">
         </div>
       </div>
 
@@ -160,86 +144,78 @@
     document.addEventListener('DOMContentLoaded', function() {
       const searchInput = document.getElementById('searchInput');
       const searchResults = document.querySelector('.search-results');
-      const searchError = document.getElementById('searchError');
-      const validIcon = document.querySelector('.valid-icon');
-      const invalidIcon = document.querySelector('.invalid-icon');
       
-      // Validation rules
-      const validationRules = {
-        minLength: 2,
-        maxLength: 50,
-        pattern: /^[A-Za-z0-9\s\-]+$/
-      };
-
-      // Function to validate search input
-      function validateSearchInput(value) {
-        if (!value) {
-          return {
-            isValid: false,
-            message: 'Please enter a search term'
-          };
+      // Sample data for demonstration
+      const places = [
+        {
+          name: 'Arborea Cafe',
+          category: 'Food',
+          rating: 4.5,
+          image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          name: 'Seafood Paradise',
+          category: 'Food',
+          rating: 4.7,
+          image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          name: 'Sunset Beach Resort',
+          category: 'Beach',
+          rating: 4.8,
+          image: 'https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          name: 'Mountain View Lodge',
+          category: 'Mountain',
+          rating: 4.6,
+          image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          name: 'Central Park Gardens',
+          category: 'Park',
+          rating: 4.4,
+          image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80'
         }
+      ];
 
-        if (value.length < validationRules.minLength) {
-          return {
-            isValid: false,
-            message: `Search term must be at least ${validationRules.minLength} characters`
-          };
-        }
-
-        if (value.length > validationRules.maxLength) {
-          return {
-            isValid: false,
-            message: `Search term cannot exceed ${validationRules.maxLength} characters`
-          };
-        }
-
-        if (!validationRules.pattern.test(value)) {
-          return {
-            isValid: false,
-            message: 'Search term can only contain letters, numbers, spaces, and hyphens'
-          };
-        }
-
-        return {
-          isValid: true,
-          message: ''
-        };
-      }
-
-      // Function to show validation status
-      function updateValidationStatus(isValid, message = '') {
-        if (isValid) {
-          validIcon.style.display = 'block';
-          invalidIcon.style.display = 'none';
-          searchInput.style.borderColor = '#4CAF50';
-          searchError.style.display = 'none';
-        } else {
-          validIcon.style.display = 'none';
-          invalidIcon.style.display = 'block';
-          searchInput.style.borderColor = '#ff4444';
-          if (message) {
-            searchError.textContent = message;
-            searchError.style.display = 'block';
-          }
-        }
+      // Function to create a result card
+      function createResultCard(place) {
+        return `
+          <div class="pick-card modern-card" style="margin: 0 16px 20px 16px; border-radius: 24px; overflow: hidden; background: #2a2a2a; box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
+            <div class="pick-img-wrap" style="position: relative; height: 200px;">
+              <img class="pick-img" src="${place.image}" alt="${place.name}" style="width:100%; height:100%; object-fit:cover;">
+              <div class="pick-gradient" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
+              <div class="pick-info" style="position:absolute; top:0; left:0; right:0; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+                <span class="pick-category" style="background:rgba(255,255,255,0.9); color:#23272f; padding:6px 16px; border-radius:16px; font-size:0.9rem; font-weight:500;">${place.category}</span>
+                <button class="bookmark-btn" aria-label="Bookmark" style="background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                  <svg width="20" height="20" fill="none" stroke="#23272f" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="pick-overlay-bottom" style="position:absolute; bottom:0; left:0; right:0; padding:20px 16px; color:white;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span class="pick-title" style="font-size:1.2rem; font-weight:600;">${place.name}</span>
+                  <span class="pick-rating" style="display:flex; align-items:center; background:rgba(255,255,255,0.9); color:#23272f; padding:4px 12px; border-radius:12px; font-weight:600;">
+                    <svg width="16" height="16" fill="#FFD600" viewBox="0 0 24 24" style="margin-right:4px;">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    ${place.rating}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
       }
 
       // Function to handle search
       function handleSearch() {
-        const searchTerm = searchInput.value.trim();
-        const validation = validateSearchInput(searchTerm);
-        
-        updateValidationStatus(validation.isValid, validation.message);
-
-        if (!validation.isValid) {
-          searchResults.innerHTML = '';
-          return;
-        }
-
+        const searchTerm = searchInput.value.toLowerCase();
         const filteredPlaces = places.filter(place => 
-          place.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-          place.category.toLowerCase().includes(searchTerm.toLowerCase())
+          place.name.toLowerCase().includes(searchTerm) || 
+          place.category.toLowerCase().includes(searchTerm)
         );
 
         searchResults.innerHTML = filteredPlaces.length > 0 
@@ -249,9 +225,6 @@
 
       // Function to filter by category
       window.filterByCategory = function(category) {
-        const validation = validateSearchInput(searchInput.value.trim());
-        updateValidationStatus(validation.isValid, validation.message);
-        
         const filteredPlaces = places.filter(place => place.category === category);
         searchResults.innerHTML = filteredPlaces.length > 0 
           ? filteredPlaces.map(place => createResultCard(place)).join('')
@@ -269,27 +242,11 @@
         });
       };
 
-      // Add event listeners for real-time validation
-      searchInput.addEventListener('input', function() {
-        const value = this.value.trim();
-        if (value) {
-          handleSearch();
-        } else {
-          updateValidationStatus(false, 'Please enter a search term');
-          searchResults.innerHTML = '';
-        }
-      });
+      // Add event listener for search input
+      searchInput.addEventListener('input', handleSearch);
 
-      searchInput.addEventListener('focus', function() {
-        const value = this.value.trim();
-        if (value) {
-          const validation = validateSearchInput(value);
-          updateValidationStatus(validation.isValid, validation.message);
-        }
-      });
-
-      // Initial validation state
-      updateValidationStatus(false, 'Please enter a search term');
+      // Initial search results
+      handleSearch();
     });
   </script>
 
