@@ -249,6 +249,14 @@
       // Initial search results
       handleSearch();
     });
+
+    // Toggle bookmark active state
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.bookmark-btn')) {
+        e.preventDefault();
+        e.target.closest('.bookmark-btn').classList.toggle('active');
+      }
+    });
   </script>
 
   <script src="../js/navigation.js"></script>
