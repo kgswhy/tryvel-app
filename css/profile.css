@@ -138,7 +138,7 @@
   transition: .3s;
 }
 .switch input:checked + .slider {
-  background: #6c63ff;
+  background: #9CA4A9;
 }
 .slider:before {
   position: absolute;

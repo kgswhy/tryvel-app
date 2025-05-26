@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set the correct button to active
     if (currentPage === 'home.html' && btn.getAttribute('aria-label') === 'Home') {
       btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#6c63ff');
+      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
     } else if (currentPage === 'search.html' && btn.getAttribute('aria-label') === 'Search') {
       btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#6c63ff');
+      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
     } else if (currentPage === 'saved.html' && btn.getAttribute('aria-label') === 'Bookmark') {
       btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#6c63ff');
+      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
     } else if (currentPage === 'profile.html' && btn.getAttribute('aria-label') === 'Profile') {
       btn.classList.add('active');
-      btn.querySelector('svg').setAttribute('stroke', '#6c63ff');
+      btn.querySelector('svg').setAttribute('stroke', '#9CA4A9');
     } else {
       // Ensure non-active buttons have the correct color
       btn.querySelector('svg').setAttribute('stroke', '#555');

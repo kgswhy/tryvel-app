@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="stars">★★★★★</span>
             <span class="rating-value">${rating}</span>
             <button class="bookmark-btn active">
-              <svg width="20" height="20" fill="#6c63ff" viewBox="0 0 24 24">
+              <svg width="20" height="20" fill="#9CA4A9" viewBox="0 0 24 24">
                 <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
               </svg>
             </button>

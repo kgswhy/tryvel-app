@@ -981,7 +981,7 @@ body.home-page {
 }
 
 .view-all {
-  color: #6c63ff;
+  color: #9CA4A9;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -1137,11 +1137,11 @@ body.home-page {
 }
 
 .nav-btn.active {
-  color: #6c63ff;
+  color: #9CA4A9;
 }
 
 .nav-btn.active svg {
-  stroke: #6c63ff;
+  stroke: #9CA4A9;
 }
 
 @media (min-width: 601px) {

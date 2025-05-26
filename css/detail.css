@@ -212,7 +212,7 @@
 .view-all-reviews {
   background: none;
   border: none;
-  color: #6c63ff;
+  color: #9CA4A9;
   font-weight: 600;
   font-size: 0.95rem;
   padding: 8px 0;
@@ -236,7 +236,7 @@
 
 .action-btn {
   width: 100%;
-  background-color: #6c63ff;
+  background-color: #9CA4A9;
   color: white;
   border: none;
   border-radius: 12px;

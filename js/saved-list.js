@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="saved-image">
           <img src="${image}" alt="${title}">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="#6c63ff" viewBox="0 0 24 24">
+            <svg width="24" height="24" fill="#9CA4A9" viewBox="0 0 24 24">
               <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
             </svg>
           </button>
