@@ -113,7 +113,7 @@
       <h2>Tryvel Support</h2>
     </div>
     <div class="chat-container" id="chatContainer">
-      <div class="chat-bubble customer">Welcome to Sayap Suci Customer Service! How can we assist you today? 🍗</div>
+<div class="chat-bubble customer">Hi there! 👋 I’m your Tryvels travel assistant. Need destination ideas or travel info? Let’s chat!</div>
     </div>
     <form class="chat-input-bar" id="chatForm" autocomplete="off">
       <input type="text" id="chatInput" placeholder="Ask about our menu, hours, or make a reservation..." required />
@@ -163,15 +163,16 @@
     const chatContainer = document.getElementById('chatContainer');
 
    const responses = {
-  'recommendation': 'Kami merekomendasikan destinasi populer berikut:\n• Bali – Pantai & Budaya\n• Yogyakarta – Sejarah & Kuliner\n• Labuan Bajo – Wisata Alam & Diving\n• Bandung – Belanja & Alam\n\nIngin tahu lebih banyak tentang salah satu destinasi?',
-  'hours': 'Kami melayani pemesanan dan konsultasi setiap hari dari jam 08:00 hingga 20:00 WIB.',
-  'booking': 'Untuk memesan paket wisata, silakan berikan:\n• Nama destinasi\n• Tanggal keberangkatan\n• Jumlah peserta\n• Nomor kontak\n\nKami akan segera menghubungi Anda!',
-  'transport': 'Kami menyediakan informasi dan pemesanan transportasi:\n• Tiket pesawat\n• Sewa mobil\n• Antar-jemput bandara\n\nTransportasi tersedia tergantung lokasi dan waktu perjalanan.',
-  'office': 'Kantor kami berlokasi di:\nJl. Raya Cikini No. 88, Jakarta Pusat\n\nKunjungi kami atau hubungi untuk konsultasi perjalanan!',
-  'price': 'Harga paket wisata bervariasi, mulai dari IDR 500,000 hingga IDR 5,000,000 tergantung tujuan dan durasi.\n\nHubungi kami untuk penawaran khusus!',
-  'parking': 'Untuk destinasi wisata tertentu, kami akan memberi tahu apakah tersedia:\n• Area parkir umum\n• Shuttle bus\n• Transportasi lokal',
-  'default': 'Terima kasih telah menghubungi TravelEasy! Untuk bantuan cepat, hubungi kami di +62 812 3456 7890. Tim kami siap membantu perjalanan Anda!'
+  'recommendation': 'Here are some popular destinations you might like:\n• Bali – Beaches & Culture\n• Yogyakarta – History & Culinary\n• Labuan Bajo – Adventure & Diving\n• Malang – Nature & Cool Climate\n\nWould you like to know more about any of these?',
+  'hours': 'Our service is available 24/7. Feel free to ask anytime about travel plans!',
+  'booking': 'We can help you find trusted agents to book your trips. Please provide:\n• Destination\n• Departure date\n• Number of travelers\n\nWe’ll find the best options for you.',
+  'transport': 'ExploreMore provides info on transportation options including:\n• Flight tickets\n• Local vehicle rentals\n• Airport shuttles\n\nTell us what you need!',
+  'office': 'As a digital platform, ExploreMore does not have a physical office. But our support team is always online to help!',
+  'price': 'Travel costs vary depending on destination and duration. For example:\n• Day trips start at IDR 300,000\n• 3-day packages from IDR 1,200,000\n\nWant an estimate for a specific place?',
+  'parking': 'We can provide info about parking facilities or public transport availability at your chosen destination. Just tell us the place name.',
+  'default': 'Thank you for using ExploreMore! For more help, contact our travel partners or ask more questions here.'
 };
+
 
 function getResponse(message) {
   message = message.toLowerCase();
