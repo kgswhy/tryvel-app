@@ -162,37 +162,36 @@
     const chatInput = document.getElementById('chatInput');
     const chatContainer = document.getElementById('chatContainer');
 
-    // Common restaurant questions and answers
-    const responses = {
-      'menu': 'Our signature dishes include:\n• Spicy Honey Wings\n• BBQ Wings\n• Garlic Parmesan Wings\n• Buffalo Wings\n\nWould you like to know more about any specific dish?',
-      'hours': 'We are open daily from 10:00 AM to 10:00 PM. Last order is at 9:30 PM.',
-      'reservation': 'To make a reservation, please provide:\n• Date and time\n• Number of guests\n• Contact number\n\nWe\'ll confirm your booking shortly!',
-      'delivery': 'We offer delivery through our partner apps:\n• GoFood\n• GrabFood\n• Shopeefood\n\nDelivery hours: 10:00 AM - 9:30 PM',
-      'location': 'We are located at:\nJl. Boulevard Raya Blok WA 2 No. 31\nKelapa Gading, North Jakarta\n\nYou can find directions on Google Maps!',
-      'price': 'Our price range is IDR 50,000 - IDR 150,000 per person.\n\nWings start from IDR 45,000 for 6 pieces.',
-      'parking': 'Yes, we have parking available:\n• Street parking\n• Mall parking (connected)\n• Valet service (available)',
-      'default': 'Thank you for your message! For immediate assistance, you can also call us at +62 21 4585 7890. Our staff will be happy to help you!'
-    };
+   const responses = {
+  'recommendation': 'Kami merekomendasikan destinasi populer berikut:\n• Bali – Pantai & Budaya\n• Yogyakarta – Sejarah & Kuliner\n• Labuan Bajo – Wisata Alam & Diving\n• Bandung – Belanja & Alam\n\nIngin tahu lebih banyak tentang salah satu destinasi?',
+  'hours': 'Kami melayani pemesanan dan konsultasi setiap hari dari jam 08:00 hingga 20:00 WIB.',
+  'booking': 'Untuk memesan paket wisata, silakan berikan:\n• Nama destinasi\n• Tanggal keberangkatan\n• Jumlah peserta\n• Nomor kontak\n\nKami akan segera menghubungi Anda!',
+  'transport': 'Kami menyediakan informasi dan pemesanan transportasi:\n• Tiket pesawat\n• Sewa mobil\n• Antar-jemput bandara\n\nTransportasi tersedia tergantung lokasi dan waktu perjalanan.',
+  'office': 'Kantor kami berlokasi di:\nJl. Raya Cikini No. 88, Jakarta Pusat\n\nKunjungi kami atau hubungi untuk konsultasi perjalanan!',
+  'price': 'Harga paket wisata bervariasi, mulai dari IDR 500,000 hingga IDR 5,000,000 tergantung tujuan dan durasi.\n\nHubungi kami untuk penawaran khusus!',
+  'parking': 'Untuk destinasi wisata tertentu, kami akan memberi tahu apakah tersedia:\n• Area parkir umum\n• Shuttle bus\n• Transportasi lokal',
+  'default': 'Terima kasih telah menghubungi TravelEasy! Untuk bantuan cepat, hubungi kami di +62 812 3456 7890. Tim kami siap membantu perjalanan Anda!'
+};
 
-    function getResponse(message) {
-      message = message.toLowerCase();
-      if (message.includes('menu') || message.includes('food') || message.includes('dish')) {
-        return responses.menu;
-      } else if (message.includes('hour') || message.includes('open') || message.includes('time')) {
-        return responses.hours;
-      } else if (message.includes('reserv') || message.includes('book') || message.includes('table')) {
-        return responses.reservation;
-      } else if (message.includes('deliver') || message.includes('order') || message.includes('takeaway')) {
-        return responses.delivery;
-      } else if (message.includes('where') || message.includes('location') || message.includes('address')) {
-        return responses.location;
-      } else if (message.includes('price') || message.includes('cost') || message.includes('expensive')) {
-        return responses.price;
-      } else if (message.includes('park') || message.includes('car')) {
-        return responses.parking;
-      }
-      return responses.default;
-    }
+function getResponse(message) {
+  message = message.toLowerCase();
+  if (message.includes('rekomendasi') || message.includes('destinasi') || message.includes('tempat wisata')) {
+    return responses.recommendation;
+  } else if (message.includes('jam') || message.includes('buka') || message.includes('operasional')) {
+    return responses.hours;
+  } else if (message.includes('pesan') || message.includes('booking') || message.includes('paket')) {
+    return responses.booking;
+  } else if (message.includes('transport') || message.includes('kendaraan') || message.includes('mobil') || message.includes('antar')) {
+    return responses.transport;
+  } else if (message.includes('alamat') || message.includes('kantor') || message.includes('lokasi')) {
+    return responses.office;
+  } else if (message.includes('harga') || message.includes('biaya') || message.includes('murah') || message.includes('mahal')) {
+    return responses.price;
+  } else if (message.includes('parkir') || message.includes('mobil') || message.includes('kendaraan')) {
+    return responses.parking;
+  }
+  return responses.default;
+}
 
     chatForm.addEventListener('submit', function(e) {
       e.preventDefault();
