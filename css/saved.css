@@ -8,56 +8,56 @@
 
 /* Header */
 .saved-header {
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  margin-bottom: 16px;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .saved-header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 .view-toggle {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .toggle-btn {
-  background: #eaf1f7;
+  padding: 0.5rem;
   border: none;
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
-  transition: all 0.2s;
+  background: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background-color: var(--color-hover);
 }
 
 .toggle-btn.active {
-  background: #9CA4A9;
-  color: white;
+  background-color: var(--color-primary);
 }
 
 .toggle-btn.active svg {
-  stroke: white;
+  stroke: var(--color-white);
 }
 
 /* Saved Grid */
 .saved-grid {
+  padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 0 16px;
-  margin-bottom: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
 .saved-card {
+  background-color: var(--color-background);
   background-color: #fff;
   border-radius: 16px;
   overflow: hidden;

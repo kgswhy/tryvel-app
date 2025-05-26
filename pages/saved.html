@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saved -Tryvels</title>
+  <title>Saved Places - Webbase</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/saved.css">
 </head>
 <body class="saved-page">
   <div class="app-container">
@@ -23,7 +24,7 @@
       <h1>Saved</h1>
       <div class="view-toggle">
         <button class="toggle-btn active" data-view="grid">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="icon-medium" viewBox="0 0 24 24">
             <rect x="3" y="3" width="7" height="7" />
             <rect x="14" y="3" width="7" height="7" />
             <rect x="3" y="14" width="7" height="7" />
@@ -31,7 +32,7 @@
           </svg>
         </button>
         <button class="toggle-btn" data-view="list">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="20" height="20" fill="none" stroke="var(--color-base)" stroke-width="2" viewBox="0 0 24 24">
             <line x1="3" y1="6" x2="21" y2="6" />
             <line x1="3" y1="12" x2="21" y2="12" />
             <line x1="3" y1="18" x2="21" y2="18" />
@@ -47,8 +48,8 @@
         <div class="saved-image">
           <img src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd" alt="Kuta Beach">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z" stroke="var(--color-base)" stroke-width="2" fill="none" />
             </svg>
           </button>
         </div>
@@ -56,7 +57,13 @@
           <h3>Kuta Beach</h3>
           <p>Bali, Indonesia</p>
           <div class="saved-rating">
-            <span class="stars">★★★★★</span>
+            <span class="stars">
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
             <span class="rating-value">4.8</span>
           </div>
         </div>
@@ -67,8 +74,8 @@
         <div class="saved-image">
           <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47" alt="Borobudur Temple">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z" stroke="var(--color-base)" stroke-width="2" fill="none" />
             </svg>
           </button>
         </div>
@@ -76,7 +83,13 @@
           <h3>Borobudur Temple</h3>
           <p>Magelang, Central Java</p>
           <div class="saved-rating">
-            <span class="stars">★★★★★</span>
+            <span class="stars">
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
             <span class="rating-value">4.9</span>
           </div>
         </div>
@@ -87,8 +100,8 @@
         <div class="saved-image">
           <img src="https://images.unsplash.com/photo-1573790387438-4da905039392" alt="Mount Bromo">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z" stroke="var(--color-base)" stroke-width="2" fill="none" />
             </svg>
           </button>
         </div>
@@ -96,7 +109,13 @@
           <h3>Mount Bromo</h3>
           <p>East Java, Indonesia</p>
           <div class="saved-rating">
-            <span class="stars">★★★★★</span>
+            <span class="stars">
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
             <span class="rating-value">4.7</span>
           </div>
         </div>
@@ -107,8 +126,8 @@
         <div class="saved-image">
           <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482" alt="Tanjung Puting">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z" stroke="var(--color-base)" stroke-width="2" fill="none" />
             </svg>
           </button>
         </div>
@@ -116,7 +135,13 @@
           <h3>Tanjung Puting</h3>
           <p>Kalimantan, Indonesia</p>
           <div class="saved-rating">
-            <span class="stars">★★★★★</span>
+            <span class="stars">
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
             <span class="rating-value">4.6</span>
           </div>
         </div>
@@ -127,8 +152,8 @@
         <div class="saved-image">
           <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf" alt="Komodo Island">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z" stroke="var(--color-base)" stroke-width="2" fill="none" />
             </svg>
           </button>
         </div>
@@ -136,7 +161,13 @@
           <h3>Komodo Island</h3>
           <p>East Nusa Tenggara</p>
           <div class="saved-rating">
-            <span class="stars">★★★★★</span>
+            <span class="stars">
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
             <span class="rating-value">4.8</span>
           </div>
         </div>
@@ -147,8 +178,8 @@
         <div class="saved-image">
           <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2" alt="Sayap Suci">
           <button class="bookmark-btn active">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z"/>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M6 4a2 2 0 0 0-2 2v14l8-5.333L20 20V6a2 2 0 0 0-2-2H6z" stroke="var(--color-base)" stroke-width="2" fill="none" />
             </svg>
           </button>
         </div>
@@ -156,7 +187,13 @@
           <h3>Sayap Suci Kelapa Gading</h3>
           <p>Jakarta Utara</p>
           <div class="saved-rating">
-            <span class="stars">★★★★★</span>
+            <span class="stars">
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="16" height="16" fill="var(--color-gold)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
             <span class="rating-value">4.5</span>
           </div>
         </div>
